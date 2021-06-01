@@ -10,36 +10,36 @@ namespace PSTeamManagement.WCFService
 {
     public partial class TeamManagement : IInternal
     {
-        public List<PersonInternalInformation> GetInternalInformation(List<string> initials)
-        {
-            var people = GetPerson(initials);
+        //public List<PersonInternalInformation> GetInternalInformation(List<string> initials)
+        //{
+        //    var people = GetPerson(initials);
 
-            List<PersonInternalInformation> personInternalInformation = new List<PersonInternalInformation>();
-            foreach (var person in people)
-            {
-                var internalInformation = (from f in DbContext.Internal
-                                 where f.Person.Initials == person.Initials
-                                 select new Internal() { Date = f.CreatedDate, Value = f.Value }).ToList();
-                personInternalInformation.Add(new PersonInternalInformation { FirstName = person.FirstName, LastName = person.Lastname, InternalInformation = internalInformation });
+        //    List<PersonInternalInformation> personInternalInformation = new List<PersonInternalInformation>();
+        //    foreach (var person in people)
+        //    {
+        //        var internalInformation = (from f in DbContext.Internal
+        //                         where f.Person.Initials == person.Initials
+        //                         select new Internal() { Date = f.CreatedDate, Value = f.Value }).ToList();
+        //        personInternalInformation.Add(new PersonInternalInformation { FirstName = person.FirstName, LastName = person.Lastname, InternalInformation = internalInformation });
 
-            }
+        //    }
 
-            return personInternalInformation;
-        }
+        //    return personInternalInformation;
+        //}
 
-        public void SaveInternalInformation(List<string> initials, string value)
-        {
-            var people = GetPerson(initials);
-            foreach (var person in people)
-            {
-                var internalInformation = new PSTeamManagement.DB.Internal();
-                internalInformation.CreatedDate = TimeTools.Now;
-                internalInformation.Value = value;
-                internalInformation.Person = person;
-                this.DbContext.Internal.Add(internalInformation);
-            }
+        //public void SaveInternalInformation(List<string> initials, string value)
+        //{
+        //    var people = GetPerson(initials);
+        //    foreach (var person in people)
+        //    {
+        //        var internalInformation = new PSTeamManagement.DB.Internal();
+        //        internalInformation.CreatedDate = TimeTools.Now;
+        //        internalInformation.Value = value;
+        //        internalInformation.Person = person;
+        //        this.DbContext.Internal.Add(internalInformation);
+        //    }
 
-            this.DbContext.SaveChanges();
-        }
+        //    this.DbContext.SaveChanges();
+        //}
     }
 }

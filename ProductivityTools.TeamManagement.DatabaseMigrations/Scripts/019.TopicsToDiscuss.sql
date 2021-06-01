@@ -1,0 +1,1 @@
+﻿ALTER TABLE [tm].[One2One] ADD [TopicsToDiscuss] VARCHAR(maX)

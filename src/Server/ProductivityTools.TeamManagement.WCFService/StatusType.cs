@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace PSTeamManagement.WCFService
 {
-    enum StatusType
-    {
-        In,
-        Out,
-        AlreadyIn,
-        AlreadyOut,
-        BreakStart,
-        BreakEnd,
-        StillIn
-    }
+    //enum StatusType
+    //{
+    //    In,
+    //    Out,
+    //    AlreadyIn,
+    //    AlreadyOut,
+    //    BreakStart,
+    //    BreakEnd,
+    //    StillIn
+    //}
 }

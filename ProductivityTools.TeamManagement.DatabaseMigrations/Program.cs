@@ -1,18 +1,14 @@
-﻿using DBUpPT;
+﻿using DbUp;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace PSTeamManagement.DBScripts
+namespace ProductivityTools.TeamManagement.DatabaseMigrations
 {
-    public class Scripts
+    class Program
     {
-        public void PerformDatabaseUpdate()
+        static void Main(string[] args)
         {
-            string serverName = "./SQL2019";// ProductivityTools.MasterConfiguration.MConfiguration.Configuration["ServerName"];
+            string serverName = ".\\SQL2019";// ProductivityTools.MasterConfiguration.MConfiguration.Configuration["ServerName"];
             string dbName = "PTTeamManagement";// ProductivityTools.MasterConfiguration.MConfiguration.Configuration["DatabaseName"];
             DBUp dBUp = new DBUp("tm");
             Assembly assembly = Assembly.GetExecutingAssembly();

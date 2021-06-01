@@ -1,0 +1,56 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Scripts\001.CreateTable.sql" />
+    <None Remove="Scripts\004.Person.sql" />
+    <None Remove="Scripts\006.Feedback.sql" />
+    <None Remove="Scripts\007.Internal.sql" />
+    <None Remove="Scripts\008.UniqueInitials.sql" />
+    <None Remove="Scripts\009.OnlyDatePart.sql" />
+    <None Remove="Scripts\012.FeedbackSummary.sql" />
+    <None Remove="Scripts\013.ReFeedback.sql" />
+    <None Remove="Scripts\014.One2One.sql" />
+    <None Remove="Scripts\015.Successes.sql" />
+    <None Remove="Scripts\016.PersonFeedback.sql" />
+    <None Remove="Scripts\017.One2OneValueAlter.sql" />
+    <None Remove="Scripts\018.ReValue.sql" />
+    <None Remove="Scripts\019.TopicsToDiscuss.sql" />
+    <None Remove="Scripts\020.NVarcharFeedback.sql" />
+    <None Remove="Scripts\021.Meetings.sql" />
+    <None Remove="Scripts\022.MeetingsPerson1.sql" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Scripts\022.MeetingsPerson1.sql" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Scripts\001.CreateTable.sql" />
+    <EmbeddedResource Include="Scripts\004.Person.sql" />
+    <EmbeddedResource Include="Scripts\006.Feedback.sql" />
+    <EmbeddedResource Include="Scripts\007.Internal.sql" />
+    <EmbeddedResource Include="Scripts\008.UniqueInitials.sql" />
+    <EmbeddedResource Include="Scripts\009.OnlyDatePart.sql" />
+    <EmbeddedResource Include="Scripts\012.FeedbackSummary.sql" />
+    <EmbeddedResource Include="Scripts\013.ReFeedback.sql" />
+    <EmbeddedResource Include="Scripts\014.One2One.sql" />
+    <EmbeddedResource Include="Scripts\015.Successes.sql" />
+    <EmbeddedResource Include="Scripts\016.PersonFeedback.sql" />
+    <EmbeddedResource Include="Scripts\017.One2OneValueAlter.sql" />
+    <EmbeddedResource Include="Scripts\018.ReValue.sql" />
+    <EmbeddedResource Include="Scripts\019.TopicsToDiscuss.sql" />
+    <EmbeddedResource Include="Scripts\020.NVarcharFeedback.sql" />
+    <EmbeddedResource Include="Scripts\021.Meetings.sql" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="dbup-sqlserver" Version="4.5.0" />
+    <PackageReference Include="ProductivityTools.DbUp" Version="0.0.7" />
+  </ItemGroup>
+
+</Project>

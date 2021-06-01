@@ -1,0 +1,1 @@
+﻿ALTER TABLE [tm].[Feedback] ADD ReFeedback VARCHAR(1000) NULL

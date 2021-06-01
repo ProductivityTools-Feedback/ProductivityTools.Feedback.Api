@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{01A2B0CD-A1F8-4D83-B105-24350368D7F3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PSWorkingTime.DBScripts</RootNamespace>
+    <AssemblyName>PSWorkingTime.DBScripts</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ConnectionStringLightPT, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\ConnectionStringLightPT.0.0.2\lib\v4.6.1\ConnectionStringLightPT.dll</HintPath>
+    </Reference>
+    <Reference Include="DbUp, Version=3.3.5.0, Culture=neutral, PublicKeyToken=4b419c53bdfd4cbf, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\dbup.3.3.5\lib\net35\DbUp.dll</HintPath>
+    </Reference>
+    <Reference Include="DBUpPT, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\DBUpPT.0.0.1\lib\v4.6.1\DBUpPT.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Scripts.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Scripts\001.CreateTable.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Scripts\002.AddDictValue.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Scripts\003.AddEventType.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Scripts\004.Person.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Scripts\006.Feedback.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Scripts\005.WorkLunch.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Scripts\007.Internal.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Scripts\022.MeetingsPerson1.sql" />
+    <EmbeddedResource Include="Scripts\021.Meetings.sql" />
+    <EmbeddedResource Include="Scripts\020.NVarcharFeedback.sql" />
+    <EmbeddedResource Include="Scripts\019.TopicsToDiscuss.sql" />
+    <EmbeddedResource Include="Scripts\018.ReValue.sql" />
+    <EmbeddedResource Include="Scripts\017.One2OneValueAlter.sql" />
+    <EmbeddedResource Include="Scripts\016.PersonFeedback.sql" />
+    <EmbeddedResource Include="Scripts\015.Successes.sql" />
+    <EmbeddedResource Include="Scripts\014.One2One.sql" />
+    <EmbeddedResource Include="Scripts\013.ReFeedback.sql" />
+    <EmbeddedResource Include="Scripts\012.FeedbackSummary.sql" />
+    <EmbeddedResource Include="Scripts\011.WorkTimeDetails2.sql" />
+    <EmbeddedResource Include="Scripts\010.WorkTimeDetails.sql" />
+    <EmbeddedResource Include="Scripts\009.OnlyDatePart.sql" />
+    <Content Include="Scripts\008.UniqueInitials.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\GitHub\ProductivityTools.MasterConfiguration2\src\Library\ProductivityTools.MasterConfiguration\ProductivityTools.MasterConfiguration.csproj">
+      <Project>{108cefcd-3617-4c60-bdf3-d1f77636fb62}</Project>
+      <Name>ProductivityTools.MasterConfiguration</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

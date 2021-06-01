@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27428.2037
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PSTeamManagement.WindowsService", "src\Server\PSTeamManagement.WindowsService\PSTeamManagement.WindowsService.csproj", "{824B1F5D-AF65-4CE6-B587-9DCBDD8FE9EE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductivityTools.TeamManagement.WindowsService", "src\Server\ProductivityTools.TeamManagement.WindowsService\ProductivityTools.TeamManagement.WindowsService.csproj", "{824B1F5D-AF65-4CE6-B587-9DCBDD8FE9EE}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Server", "Server", "{617DB4AF-6DF3-46CB-9941-545D3D825F81}"
 EndProject
@@ -11,21 +11,21 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Client", "Client", "{350D57
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{C88FBEFB-8105-4AB8-9FBA-4AFD8DB7FFB1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PSTeamManagement.WCFService", "src\Server\PSTeamManagement.WCFService\PSTeamManagement.WCFService.csproj", "{96756B79-1695-49EE-AFC5-8E690083B241}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductivityTools.TeamManagement.WCFService", "src\Server\ProductivityTools.TeamManagement.WCFService\ProductivityTools.TeamManagement.WCFService.csproj", "{96756B79-1695-49EE-AFC5-8E690083B241}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PSTeamManagement.WindowsServiceRunner", "src\Server\PSTeamManagement.WindowsServiceRunner\PSTeamManagement.WindowsServiceRunner.csproj", "{EFEF07E2-9F31-47DB-9045-9C5BB636C3E1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductivityTools.TeamManagement.WindowsServiceRunner", "src\Server\ProductivityTools.TeamManagement.WindowsServiceRunner\ProductivityTools.TeamManagement.WindowsServiceRunner.csproj", "{EFEF07E2-9F31-47DB-9045-9C5BB636C3E1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PSTeamManagement.Contract", "src\Common\PSTeamManagement.Contract\PSTeamManagement.Contract.csproj", "{19D06141-4588-4D49-8B46-9099DA3E2D12}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductivityTools.TeamManagement.Contract", "src\Common\ProductivityTools.TeamManagement.Contract\ProductivityTools.TeamManagement.Contract.csproj", "{19D06141-4588-4D49-8B46-9099DA3E2D12}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PSTeamManagement.DBScripts", "src\Server\PSTeamManagement.DBScripts\PSTeamManagement.DBScripts.csproj", "{01A2B0CD-A1F8-4D83-B105-24350368D7F3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductivityTools.TeamManagement.DBScripts", "src\Server\ProductivityTools.TeamManagement.DBScripts\ProductivityTools.TeamManagement.DBScripts.csproj", "{01A2B0CD-A1F8-4D83-B105-24350368D7F3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PSTeamManagement.Cmdlet", "src\Client\PSTeamManagement.Cmdlet\PSTeamManagement.Cmdlet.csproj", "{FB05AD16-1A16-4410-AA62-E8B581F74CE4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductivityTools.TeamManagement.Cmdlet", "src\Client\ProductivityTools.TeamManagement.Cmdlet\ProductivityTools.TeamManagement.Cmdlet.csproj", "{FB05AD16-1A16-4410-AA62-E8B581F74CE4}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Nugets", "Nugets", "{1B1A487A-49E8-4486-AC67-A20F1399CF0A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PSTeamManagement.Configuration", "src\Common\PSTeamManagement.Configuration\PSTeamManagement.Configuration.csproj", "{D7744F70-3C03-43D8-9407-D7996EDAF31C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductivityTools.TeamManagement.Configuration", "src\Common\ProductivityTools.TeamManagement.Configuration\ProductivityTools.TeamManagement.Configuration.csproj", "{D7744F70-3C03-43D8-9407-D7996EDAF31C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PSTeamManagement.DB", "src\Server\PSTeamManagement.DB\PSTeamManagement.DB.csproj", "{A8C3FC10-876C-4F0B-9B9D-5FD5854C32E9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductivityTools.TeamManagement.DB", "src\Server\ProductivityTools.TeamManagement.DB\ProductivityTools.TeamManagement.DB.csproj", "{A8C3FC10-876C-4F0B-9B9D-5FD5854C32E9}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductivityTools.PSCmdlet", "..\..\GitHub\ProductivityTools.PSCmdlet\ProductivityTools.PSCmdlet\ProductivityTools.PSCmdlet.csproj", "{CCD8F8DD-0A5E-48ED-A9E1-66D9E07D8919}"
 EndProject

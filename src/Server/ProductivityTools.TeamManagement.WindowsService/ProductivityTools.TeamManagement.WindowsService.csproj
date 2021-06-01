@@ -70,19 +70,19 @@
       <Project>{108cefcd-3617-4c60-bdf3-d1f77636fb62}</Project>
       <Name>ProductivityTools.MasterConfiguration</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Common\PSTeamManagement.Configuration\PSTeamManagement.Configuration.csproj">
+    <ProjectReference Include="..\..\Common\ProductivityTools.TeamManagement.Configuration\ProductivityTools.TeamManagement.Configuration.csproj">
       <Project>{d7744f70-3c03-43d8-9407-d7996edaf31c}</Project>
       <Name>PSTeamManagement.Configuration</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Common\PSTeamManagement.Contract\PSTeamManagement.Contract.csproj">
+    <ProjectReference Include="..\..\Common\ProductivityTools.TeamManagement.Contract\ProductivityTools.TeamManagement.Contract.csproj">
       <Project>{19d06141-4588-4d49-8b46-9099da3e2d12}</Project>
       <Name>PSTeamManagement.Contract</Name>
     </ProjectReference>
-    <ProjectReference Include="..\PSTeamManagement.DBScripts\PSTeamManagement.DBScripts.csproj">
+    <ProjectReference Include="..\ProductivityTools.TeamManagement.DBScripts\ProductivityTools.TeamManagement.DBScripts.csproj">
       <Project>{01a2b0cd-a1f8-4d83-b105-24350368d7f3}</Project>
       <Name>PSTeamManagement.DBScripts</Name>
     </ProjectReference>
-    <ProjectReference Include="..\PSTeamManagement.WCFService\PSTeamManagement.WCFService.csproj">
+    <ProjectReference Include="..\ProductivityTools.TeamManagement.WCFService\ProductivityTools.TeamManagement.WCFService.csproj">
       <Project>{96756b79-1695-49ee-afc5-8e690083b241}</Project>
       <Name>PSTeamManagement.WCFService</Name>
     </ProjectReference>

@@ -76,15 +76,15 @@
       <Project>{108cefcd-3617-4c60-bdf3-d1f77636fb62}</Project>
       <Name>ProductivityTools.MasterConfiguration</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Common\PSTeamManagement.Configuration\PSTeamManagement.Configuration.csproj">
+    <ProjectReference Include="..\..\Common\ProductivityTools.TeamManagement.Configuration\ProductivityTools.TeamManagement.Configuration.csproj">
       <Project>{d7744f70-3c03-43d8-9407-d7996edaf31c}</Project>
       <Name>PSTeamManagement.Configuration</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Common\PSTeamManagement.Contract\PSTeamManagement.Contract.csproj">
+    <ProjectReference Include="..\..\Common\ProductivityTools.TeamManagement.Contract\ProductivityTools.TeamManagement.Contract.csproj">
       <Project>{19d06141-4588-4d49-8b46-9099da3e2d12}</Project>
       <Name>PSTeamManagement.Contract</Name>
     </ProjectReference>
-    <ProjectReference Include="..\PSTeamManagement.DB\PSTeamManagement.DB.csproj">
+    <ProjectReference Include="..\ProductivityTools.TeamManagement.DB\ProductivityTools.TeamManagement.DB.csproj">
       <Project>{a8c3fc10-876c-4f0b-9b9d-5fd5854c32e9}</Project>
       <Name>PSTeamManagement.DB</Name>
     </ProjectReference>

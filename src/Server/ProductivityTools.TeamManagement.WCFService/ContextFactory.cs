@@ -12,8 +12,8 @@ namespace PSTeamManagement.WCFService
     {
         public TeamFeadbackEntities CreateNewContext()
         {
-            var database = ProductivityTools.MasterConfiguration.MConfiguration.Configuration[ConfigurationKeys.DatabaseName];
-            var server = ProductivityTools.MasterConfiguration.MConfiguration.Configuration[ConfigurationKeys.ServerName];
+            var database = "PTTeamManagement"; //ProductivityTools.MasterConfiguration.MConfiguration.Configuration[ConfigurationKeys.DatabaseName];
+            var server = "./SQL2019";//ProductivityTools.MasterConfiguration.MConfiguration.Configuration[ConfigurationKeys.ServerName];
             string connectionString = ConnectionStringPT.ConnectionString.GetSqlEntityFrameworkConnectionString(server, database, "TeamFeedback");
             var context = new TeamFeadbackEntities(connectionString);
             return context;

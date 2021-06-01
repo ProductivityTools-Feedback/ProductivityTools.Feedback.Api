@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.27428.2037
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30002.166
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductivityTools.TeamManagement.WindowsService", "src\Server\ProductivityTools.TeamManagement.WindowsService\ProductivityTools.TeamManagement.WindowsService.csproj", "{824B1F5D-AF65-4CE6-B587-9DCBDD8FE9EE}"
 EndProject
@@ -21,15 +21,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductivityTools.TeamManag
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductivityTools.TeamManagement.Cmdlet", "src\Client\ProductivityTools.TeamManagement.Cmdlet\ProductivityTools.TeamManagement.Cmdlet.csproj", "{FB05AD16-1A16-4410-AA62-E8B581F74CE4}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Nugets", "Nugets", "{1B1A487A-49E8-4486-AC67-A20F1399CF0A}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductivityTools.TeamManagement.Configuration", "src\Common\ProductivityTools.TeamManagement.Configuration\ProductivityTools.TeamManagement.Configuration.csproj", "{D7744F70-3C03-43D8-9407-D7996EDAF31C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductivityTools.TeamManagement.DB", "src\Server\ProductivityTools.TeamManagement.DB\ProductivityTools.TeamManagement.DB.csproj", "{A8C3FC10-876C-4F0B-9B9D-5FD5854C32E9}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductivityTools.PSCmdlet", "..\..\GitHub\ProductivityTools.PSCmdlet\ProductivityTools.PSCmdlet\ProductivityTools.PSCmdlet.csproj", "{CCD8F8DD-0A5E-48ED-A9E1-66D9E07D8919}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductivityTools.MasterConfiguration", "..\..\GitHub\ProductivityTools.MasterConfiguration2\src\Library\ProductivityTools.MasterConfiguration\ProductivityTools.MasterConfiguration.csproj", "{108CEFCD-3617-4C60-BDF3-D1F77636FB62}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -69,14 +63,6 @@ Global
 		{A8C3FC10-876C-4F0B-9B9D-5FD5854C32E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A8C3FC10-876C-4F0B-9B9D-5FD5854C32E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A8C3FC10-876C-4F0B-9B9D-5FD5854C32E9}.Release|Any CPU.Build.0 = Release|Any CPU
-		{CCD8F8DD-0A5E-48ED-A9E1-66D9E07D8919}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CCD8F8DD-0A5E-48ED-A9E1-66D9E07D8919}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CCD8F8DD-0A5E-48ED-A9E1-66D9E07D8919}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CCD8F8DD-0A5E-48ED-A9E1-66D9E07D8919}.Release|Any CPU.Build.0 = Release|Any CPU
-		{108CEFCD-3617-4C60-BDF3-D1F77636FB62}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{108CEFCD-3617-4C60-BDF3-D1F77636FB62}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{108CEFCD-3617-4C60-BDF3-D1F77636FB62}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{108CEFCD-3617-4C60-BDF3-D1F77636FB62}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -90,8 +76,6 @@ Global
 		{FB05AD16-1A16-4410-AA62-E8B581F74CE4} = {350D5770-B4E6-4745-96D0-DB0894E7834D}
 		{D7744F70-3C03-43D8-9407-D7996EDAF31C} = {C88FBEFB-8105-4AB8-9FBA-4AFD8DB7FFB1}
 		{A8C3FC10-876C-4F0B-9B9D-5FD5854C32E9} = {617DB4AF-6DF3-46CB-9941-545D3D825F81}
-		{CCD8F8DD-0A5E-48ED-A9E1-66D9E07D8919} = {1B1A487A-49E8-4486-AC67-A20F1399CF0A}
-		{108CEFCD-3617-4C60-BDF3-D1F77636FB62} = {1B1A487A-49E8-4486-AC67-A20F1399CF0A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5DABE635-8C87-4771-B8B3-8126A54B45E9}

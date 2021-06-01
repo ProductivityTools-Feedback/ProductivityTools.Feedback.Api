@@ -66,10 +66,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\..\GitHub\ProductivityTools.MasterConfiguration2\src\Library\ProductivityTools.MasterConfiguration\ProductivityTools.MasterConfiguration.csproj">
-      <Project>{108cefcd-3617-4c60-bdf3-d1f77636fb62}</Project>
-      <Name>ProductivityTools.MasterConfiguration</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\Common\ProductivityTools.TeamManagement.Configuration\ProductivityTools.TeamManagement.Configuration.csproj">
       <Project>{d7744f70-3c03-43d8-9407-d7996edaf31c}</Project>
       <Name>PSTeamManagement.Configuration</Name>

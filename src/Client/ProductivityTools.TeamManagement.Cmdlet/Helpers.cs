@@ -1,5 +1,4 @@
-﻿using ProductivityTools.MasterConfiguration;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -24,7 +23,7 @@ namespace PSTeamManagement.Cmdlet
 
         public static void Init()
         {
-            MConfiguration.SetConfigurationName("Configuration.config");
+            //MConfiguration.SetConfigurationName("Configuration.config");
         }
     }
 }

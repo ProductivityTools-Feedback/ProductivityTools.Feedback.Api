@@ -1,6 +1,6 @@
 ﻿using ProductivityTools.PSCmdlet;
 using PSTeamFeedback.Contract.Internal;
-using PSTeamManagement.Contract;
+using ProductivityTools.TeamManagement.Contract;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,13 +10,13 @@ using System.Threading.Tasks;
 
 namespace PSTeamManagment.Cmdlet.InternalInformation.Commands
 {
-    public abstract class InternalBaseCommand<Type> : PSBaseCommandPT<Type>
+    public abstract class InternalBaseCommand<Type> : PSCommandPT<Type> where Type : PSCmdletPT
     {
         protected IInternal Client
         {
             get
             {
-                string address = ProductivityTools.MasterConfiguration.MConfiguration.Configuration["Address"];
+                string address = "";// ProductivityTools.MasterConfiguration.MConfiguration.Configuration["Address"];
                 NetTcpBinding netTcpBinding = new NetTcpBinding();
                 netTcpBinding.CloseTimeout = TimeSpan.FromMinutes(20);
                 ChannelFactory<IInternal> factory = new ChannelFactory<IInternal>(netTcpBinding, new EndpointAddress(address));

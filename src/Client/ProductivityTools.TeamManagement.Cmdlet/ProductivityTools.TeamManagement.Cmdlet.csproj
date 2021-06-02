@@ -31,11 +31,16 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="ProductivityTools.DescriptionValue, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\ProductivityTools.DescriptionValue.1.0.1\lib\netstandard2.0\ProductivityTools.DescriptionValue.dll</HintPath>
+    </Reference>
+    <Reference Include="ProductivityTools.PSCmdlet, Version=1.0.6.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\ProductivityTools.PSCmdlet.1.0.6\lib\netstandard2.0\ProductivityTools.PSCmdlet.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Management.Automation, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\Windows\Microsoft.NET\assembly\GAC_MSIL\System.Management.Automation\v4.0_3.0.0.0__31bf3856ad364e35\System.Management.Automation.dll</HintPath>
+      <HintPath>..\..\..\packages\PowerShellStandard.Library.5.1.0\lib\netstandard2.0\System.Management.Automation.dll</HintPath>
     </Reference>
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml.Linq" />
@@ -61,19 +66,17 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\..\GitHub\ProductivityTools.PSCmdlet\ProductivityTools.PSCmdlet\ProductivityTools.PSCmdlet.csproj">
-      <Project>{ccd8f8dd-0a5e-48ed-a9e1-66d9e07d8919}</Project>
-      <Name>ProductivityTools.PSCmdlet</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Common\PSTeamManagement.Configuration\PSTeamManagement.Configuration.csproj">
+    <ProjectReference Include="..\..\Common\ProductivityTools.TeamManagement.Configuration\ProductivityTools.TeamManagement.Configuration.csproj">
       <Project>{d7744f70-3c03-43d8-9407-d7996edaf31c}</Project>
       <Name>PSTeamManagement.Configuration</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Common\PSTeamManagement.Contract\PSTeamManagement.Contract.csproj">
+    <ProjectReference Include="..\..\Common\ProductivityTools.TeamManagement.Contract\ProductivityTools.TeamManagement.Contract.csproj">
       <Project>{19d06141-4588-4d49-8b46-9099da3e2d12}</Project>
       <Name>PSTeamManagement.Contract</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

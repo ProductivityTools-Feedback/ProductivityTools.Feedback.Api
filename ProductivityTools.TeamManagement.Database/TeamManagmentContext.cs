@@ -17,6 +17,8 @@ namespace ProductivityTools.TeamManagement.Database
         }
 
         public DbSet<Feedback> Feedback { get; set; }
+        public DbSet<Internal> Internal { get; set; }
+        public DbSet<Person> Person { get; set; }
 
         private ILoggerFactory GetLoggerFactory()
         {
@@ -45,6 +47,10 @@ namespace ProductivityTools.TeamManagement.Database
             modelBuilder.HasDefaultSchema("tm");
             modelBuilder.Entity<Feedback>().HasKey(x => x.FeedbackId);
             modelBuilder.Entity<Feedback>().HasOne(x => x.Person);
+
+            modelBuilder.Entity<Internal>().HasKey(x => x.InternalId);
+            modelBuilder.Entity<Internal>().HasOne(x => x.Person);
+
             modelBuilder.Entity<Person>().HasKey(x => x.PersonId);
 
             base.OnModelCreating(modelBuilder);

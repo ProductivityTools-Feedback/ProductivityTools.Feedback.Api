@@ -26,7 +26,7 @@ namespace ProductivityTools.TeamManagement.WebApi.Controllers
 
         public List<PersonFeedback> GetFeedback(List<string> initials)
         {
-            var people = Helpers.GetPerson(initials);
+            var people = Helpers.GetPerson(DbContext,initials);
 
             List<PersonFeedback> personFeedbacks = new List<PersonFeedback>();
             foreach (var person in people)
@@ -43,7 +43,7 @@ namespace ProductivityTools.TeamManagement.WebApi.Controllers
 
         public void SaveFeedback(List<string> initials, string value)
         {
-            var people = Helpers.GetPerson(initials);
+            var people = Helpers.GetPerson(DbContext,initials);
             foreach (var person in people)
             {
                 var newFeedback = new Database.Schema.Feedback();

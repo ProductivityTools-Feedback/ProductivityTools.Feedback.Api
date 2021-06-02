@@ -1,8 +1,5 @@
-﻿using ProductivityTools.MasterConfiguration;
-using PSTeamFeedback.Contract.Internal;
+﻿using PSTeamFeedback.Contract.Internal;
 using PSTeamFeedback.Contract.WorkTime;
-using PSTeamManagement.Contract;
-using PSTeamManagement.Contract.Feedback;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -47,18 +44,18 @@ namespace PSTeamManagement.WindowsService
 
         private void StartServer()
         {
-            MConfiguration.SetConfigurationName("Configuration.config");
-            UpdateDatabase();
+            //MConfiguration.SetConfigurationName("Configuration.config");
+            //UpdateDatabase();
 
-            var binding = new NetTcpBinding();
-            var address = MConfiguration.Configuration["Address"];
+            //var binding = new NetTcpBinding();
+            //var address = MConfiguration.Configuration["Address"];
 
-            host = new ServiceHost(typeof(WCFService.TeamManagement));
-            host.AddServiceEndpoint(typeof(IWorkTime), binding, address);
-            host.AddServiceEndpoint(typeof(IFeedback), binding, address);
-            host.AddServiceEndpoint(typeof(IInternal), binding, address);
+            //host = new ServiceHost(typeof(WCFService.TeamManagement));
+            //host.AddServiceEndpoint(typeof(IWorkTime), binding, address);
+            //host.AddServiceEndpoint(typeof(IFeedback), binding, address);
+            //host.AddServiceEndpoint(typeof(IInternal), binding, address);
 
-            host.Open();
+            //host.Open();
         }
 
         private void StopServer()

@@ -11,41 +11,41 @@ using System.Threading.Tasks;
 
 namespace PSTeamManagement.WCFService
 {
-    public partial class TeamManagement
-    {
+    //public partial class TeamManagement
+    //{
 
-        static TeamManagement()
-        {
-            Mapper.Initialize(cfg => {
-                cfg.CreateMap<Application.PersonSummary, PersonSummary>();
-                cfg.CreateMap<Application.Person, PSTeamFeedback.Contract.WorkTime.Person>();
-                cfg.CreateMap<Application.DaySummary, DaySummary>();
-            });
-        }
+    //    static TeamManagement()
+    //    {
+    //        Mapper.Initialize(cfg => {
+    //            cfg.CreateMap<Application.PersonSummary, PersonSummary>();
+    //            cfg.CreateMap<Application.Person, PSTeamFeedback.Contract.WorkTime.Person>();
+    //            cfg.CreateMap<Application.DaySummary, DaySummary>();
+    //        });
+    //    }
 
-        private const string DictionaryEventKey = "Event";
+    //    private const string DictionaryEventKey = "Event";
 
-        TeamFeadbackEntities context;
-        private TeamFeadbackEntities DbContext
-        {
-            get
-            {
-                if (context == null)
-                {
-                    context = new ContextFactory().CreateNewContext();
-                }
-                return context;
-            }
-        }
+    //    TeamFeadbackEntities context;
+    //    private TeamFeadbackEntities DbContext
+    //    {
+    //        get
+    //        {
+    //            if (context == null)
+    //            {
+    //                context = new ContextFactory().CreateNewContext();
+    //            }
+    //            return context;
+    //        }
+    //    }
 
-        private List<DB.Person> GetPerson(List<string> initials)
-        {
-            var personList = from person in DbContext.Person
-                             where initials.Contains(person.Initials)
-                             select person;
-            return personList.ToList();
-        }
+    //    private List<DB.Person> GetPerson(List<string> initials)
+    //    {
+    //        var personList = from person in DbContext.Person
+    //                         where initials.Contains(person.Initials)
+    //                         select person;
+    //        return personList.ToList();
+    //    }
 
      
-    }
+    //}
 }

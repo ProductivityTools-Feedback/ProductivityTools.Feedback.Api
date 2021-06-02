@@ -3,11 +3,22 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using ProductivityTools.TeamManagement.Contract.Feedback;
+using ProductivityTools.TeamManagement.Database;
+using ProductivityTools.TeamManagement.WebApi.Application;
 
 namespace ProductivityTools.TeamManagement.WebApi.Controllers
 {
     public class FeedbackController : Controller
     {
+
+        TeamManagmentContext DbContext;
+
+        public FeedbackController(TeamManagmentContext context)
+        {
+            this.DbContext = context;
+        }
+
         public IActionResult Index()
         {
             return View();
@@ -15,7 +26,7 @@ namespace ProductivityTools.TeamManagement.WebApi.Controllers
 
         public List<PersonFeedback> GetFeedback(List<string> initials)
         {
-            var people = GetPerson(initials);
+            var people = Helpers.GetPerson(initials);
 
             List<PersonFeedback> personFeedbacks = new List<PersonFeedback>();
             foreach (var person in people)
@@ -32,10 +43,10 @@ namespace ProductivityTools.TeamManagement.WebApi.Controllers
 
         public void SaveFeedback(List<string> initials, string value)
         {
-            var people = GetPerson(initials);
+            var people = Helpers.GetPerson(initials);
             foreach (var person in people)
             {
-                var newFeedback = new PSTeamManagement.DB.Feedback();
+                var newFeedback = new Database.Schema.Feedback();
                 newFeedback.CreatedDate = TimeTools.Now;
                 newFeedback.Value = value;
                 newFeedback.Person = person;

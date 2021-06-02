@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using ProductivityTools.TeamManagement.WebApi.Application;
 
 namespace ProductivityTools.TeamManagement.WebApi.Controllers
 {
@@ -15,7 +16,7 @@ namespace ProductivityTools.TeamManagement.WebApi.Controllers
 
         public List<PersonInternalInformation> GetInternalInformation(List<string> initials)
         {
-            var people = GetPerson(initials);
+            var people = Helpers.GetPerson(initials);
 
             List<PersonInternalInformation> personInternalInformation = new List<PersonInternalInformation>();
             foreach (var person in people)

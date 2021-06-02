@@ -5,7 +5,7 @@ using System.ServiceModel;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PSTeamManagement.Contract.Feedback
+namespace ProductivityTools.TeamManagement.Contract.Feedback
 {
     [ServiceContract]
     public interface IFeedback

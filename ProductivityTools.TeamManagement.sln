@@ -31,6 +31,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductivityTools.TeamManag
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductivityTools.TeamManagement.DatabaseMigrations", "ProductivityTools.TeamManagement.DatabaseMigrations\ProductivityTools.TeamManagement.DatabaseMigrations.csproj", "{CE2957E7-16EA-4D95-A87F-E86349BE9EF4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductivityTools.TeamManagement.Cmdlet.ClientCaller", "ProductivityTools.TeamManagement.Cmdlet.ClientCaller\ProductivityTools.TeamManagement.Cmdlet.ClientCaller.csproj", "{09FB6E72-3FAB-4195-92D6-B9D289991489}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -81,6 +83,10 @@ Global
 		{CE2957E7-16EA-4D95-A87F-E86349BE9EF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CE2957E7-16EA-4D95-A87F-E86349BE9EF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CE2957E7-16EA-4D95-A87F-E86349BE9EF4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{09FB6E72-3FAB-4195-92D6-B9D289991489}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{09FB6E72-3FAB-4195-92D6-B9D289991489}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{09FB6E72-3FAB-4195-92D6-B9D289991489}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{09FB6E72-3FAB-4195-92D6-B9D289991489}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -94,6 +100,7 @@ Global
 		{FB05AD16-1A16-4410-AA62-E8B581F74CE4} = {350D5770-B4E6-4745-96D0-DB0894E7834D}
 		{D7744F70-3C03-43D8-9407-D7996EDAF31C} = {C88FBEFB-8105-4AB8-9FBA-4AFD8DB7FFB1}
 		{A8C3FC10-876C-4F0B-9B9D-5FD5854C32E9} = {617DB4AF-6DF3-46CB-9941-545D3D825F81}
+		{09FB6E72-3FAB-4195-92D6-B9D289991489} = {350D5770-B4E6-4745-96D0-DB0894E7834D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5DABE635-8C87-4771-B8B3-8126A54B45E9}

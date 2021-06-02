@@ -66,6 +66,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\ProductivityTools.TeamManagement.Cmdlet.ClientCaller\ProductivityTools.TeamManagement.Cmdlet.ClientCaller.csproj">
+      <Project>{09FB6E72-3FAB-4195-92D6-B9D289991489}</Project>
+      <Name>ProductivityTools.TeamManagement.Cmdlet.ClientCaller</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Common\ProductivityTools.TeamManagement.Configuration\ProductivityTools.TeamManagement.Configuration.csproj">
       <Project>{d7744f70-3c03-43d8-9407-d7996edaf31c}</Project>
       <Name>PSTeamManagement.Configuration</Name>

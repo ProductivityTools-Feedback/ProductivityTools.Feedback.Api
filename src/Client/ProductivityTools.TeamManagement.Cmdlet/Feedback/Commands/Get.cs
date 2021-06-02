@@ -1,4 +1,5 @@
-﻿using PSTeamManagement.Cmdlet;
+﻿using ProductivityTools.TeamManagement.Cmdlet.ClientCaller;
+using PSTeamManagement.Cmdlet;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,8 +16,10 @@ namespace PSTeamManagment.Cmdlet.Feedback.Commands
 
         protected override void Invoke()
         {
-            var perfonFeedbackList = this.Client.GetFeedback(this.Cmdlet.Initials.SplitToList());
-            this.CloseClient();
+            var apiClient = new ApiClient();
+            var perfonFeedbackList = apiClient.GetFeedback(this.Cmdlet.Initials.SplitToList());
+           // var perfonFeedbackList = this.Client.GetFeedback(this.Cmdlet.Initials.SplitToList());
+           // this.CloseClient();
 
             foreach (var person in perfonFeedbackList)
             {

@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="Feedback\Feedback.cs" />
     <Compile Include="Feedback\PersonFeedback.cs" />
+    <Compile Include="Feedback\SaveFeedback.cs" />
     <Compile Include="Internal\IInternal.cs" />
     <Compile Include="Feedback\IFeedback.cs" />
     <Compile Include="Internal\InternalInformation.cs" />

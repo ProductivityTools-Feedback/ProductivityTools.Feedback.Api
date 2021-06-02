@@ -18,8 +18,6 @@ namespace PSTeamManagment.Cmdlet.Feedback.Commands
         {
             var apiClient = new ApiClient();
             var perfonFeedbackList = apiClient.GetFeedback(this.Cmdlet.Initials.SplitToList());
-           // var perfonFeedbackList = this.Client.GetFeedback(this.Cmdlet.Initials.SplitToList());
-           // this.CloseClient();
 
             foreach (var person in perfonFeedbackList)
             {

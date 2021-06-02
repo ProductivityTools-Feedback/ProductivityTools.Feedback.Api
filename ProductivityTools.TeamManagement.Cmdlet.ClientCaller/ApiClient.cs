@@ -1,5 +1,6 @@
 ﻿using ProductivityTools.SimpleHttpPostClient;
 using ProductivityTools.TeamManagement.Contract.Feedback;
+using PSTeamFeedback.Contract.Feedback;
 using System;
 using System.Collections.Generic;
 
@@ -23,5 +24,9 @@ namespace ProductivityTools.TeamManagement.Cmdlet.ClientCaller
             return result;
         }
 
+        public void SaveFeedback(List<string> initials, string value)
+        {
+            var r = this.Client.PostAsync<object>("Feedback", "SaveFeedback", new SaveFeedback { Initials = initials, Value = value }).Result;
+        }
     }
 }

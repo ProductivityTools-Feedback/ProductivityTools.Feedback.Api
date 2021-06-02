@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using ProductivityTools.TeamManagement.Contract.Feedback;
 using ProductivityTools.TeamManagement.Database;
 using ProductivityTools.TeamManagement.WebApi.Application;
+using PSTeamFeedback.Contract.Feedback;
 
 namespace ProductivityTools.TeamManagement.WebApi.Controllers
 {
@@ -46,14 +47,14 @@ namespace ProductivityTools.TeamManagement.WebApi.Controllers
 
         [HttpPost]
         [Route("SaveFeedback")]
-        public void SaveFeedback(List<string> initials, string value)
+        public void SaveFeedback(SaveFeedback input)
         {
-            var people = Helpers.GetPerson(DbContext,initials);
+            var people = Helpers.GetPerson(DbContext,input.Initials);
             foreach (var person in people)
             {
                 var newFeedback = new Database.Schema.Feedback();
                 newFeedback.CreatedDate = TimeTools.Now;
-                newFeedback.Value = value;
+                newFeedback.Value = input.Value;
                 newFeedback.Person = person;
                 this.DbContext.Feedback.Add(newFeedback);
             }

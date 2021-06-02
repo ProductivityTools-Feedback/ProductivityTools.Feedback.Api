@@ -1,4 +1,5 @@
-﻿using PSTeamManagement.Cmdlet;
+﻿using ProductivityTools.TeamManagement.Cmdlet.ClientCaller;
+using PSTeamManagement.Cmdlet;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,8 +16,10 @@ namespace PSTeamManagment.Cmdlet.Feedback.Commands
 
         protected override void Invoke()
         {
-            this.Client.SaveFeedback(this.Cmdlet.Initials.SplitToList(), this.Cmdlet.Value);
-            this.CloseClient();
+            var apiClient = new ApiClient();
+            apiClient.SaveFeedback(this.Cmdlet.Initials.SplitToList(), this.Cmdlet.Value); 
+            //this.Client.SaveFeedback(this.Cmdlet.Initials.SplitToList(), this.Cmdlet.Value);
+           // this.CloseClient();
         }
     }
 }

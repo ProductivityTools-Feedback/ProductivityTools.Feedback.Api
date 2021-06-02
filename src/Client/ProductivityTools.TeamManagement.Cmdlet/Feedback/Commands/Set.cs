@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace PSTeamManagment.Cmdlet.Feedback.Commands
 {
-    public class Set : FeedbackBaseCommand<SetFeedback>
+    public class Set : TeamManagmentCmdletBase<SetFeedback>
     {
         protected override bool Condition => this.Cmdlet.Initials.AnyPersonInitial() && !string.IsNullOrEmpty(this.Cmdlet.Value);
 
@@ -16,8 +16,7 @@ namespace PSTeamManagment.Cmdlet.Feedback.Commands
 
         protected override void Invoke()
         {
-            var apiClient = new ApiClient();
-            apiClient.SaveFeedback(this.Cmdlet.Initials.SplitToList(), this.Cmdlet.Value); 
+            ApiClient.SaveFeedback(this.Cmdlet.Initials.SplitToList(), this.Cmdlet.Value); 
             //this.Client.SaveFeedback(this.Cmdlet.Initials.SplitToList(), this.Cmdlet.Value);
            // this.CloseClient();
         }

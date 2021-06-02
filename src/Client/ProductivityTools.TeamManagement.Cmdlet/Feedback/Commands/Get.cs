@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace PSTeamManagment.Cmdlet.Feedback.Commands
 {
-    public class Get : FeedbackBaseCommand<GetFeedback>
+    public class Get : TeamManagmentCmdletBase<GetFeedback>
     {
         public Get(GetFeedback cmdlet) : base(cmdlet) { }
 
@@ -16,8 +16,8 @@ namespace PSTeamManagment.Cmdlet.Feedback.Commands
 
         protected override void Invoke()
         {
-            var apiClient = new ApiClient();
-            var perfonFeedbackList = apiClient.GetFeedback(this.Cmdlet.Initials.SplitToList());
+          
+            var perfonFeedbackList = ApiClient.GetFeedback(this.Cmdlet.Initials.SplitToList());
 
             foreach (var person in perfonFeedbackList)
             {

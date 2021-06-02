@@ -46,14 +46,14 @@ namespace ProductivityTools.TeamManagement.WebApi.Controllers
 
         [HttpPost]
         [Route("SaveInternalInformation")]
-        public void SaveInternalInformation(List<string> initials, string value)
+        public void SaveInternalInformation(SaveInternalInformation input)
         {
-            var people = Helpers.GetPerson(DbContext, initials);
+            var people = Helpers.GetPerson(DbContext, input.Initials);
             foreach (var person in people)
             {
                 var internalInformation = new Database.Schema.Internal();
                 internalInformation.CreatedDate = TimeTools.Now;
-                internalInformation.Value = value;
+                internalInformation.Value = input.Value;
                 internalInformation.Person = person;
                 this.DbContext.Internal.Add(internalInformation);
             }

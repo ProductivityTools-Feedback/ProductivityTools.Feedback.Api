@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace PSTeamManagment.Cmdlet.InternalInformation.Commands
 {
-    public class Set : InternalBaseCommand<SetInternal>
+    public class Set : TeamManagmentCmdletBase<SetInternal>
     {
         protected override bool Condition => this.Cmdlet.Initials.AnyPersonInitial() && !string.IsNullOrEmpty(this.Cmdlet.Value);
 
@@ -15,8 +15,7 @@ namespace PSTeamManagment.Cmdlet.InternalInformation.Commands
 
         protected override void Invoke()
         {
-            this.Client.SaveInternalInformation(this.Cmdlet.Initials.SplitToList(), this.Cmdlet.Value);
-            this.CloseClient();
+            base.ApiClient.SaveInternalInformation(this.Cmdlet.Initials.SplitToList(), this.Cmdlet.Value);
         }
     }
 }

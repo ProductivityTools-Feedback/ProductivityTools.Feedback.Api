@@ -42,7 +42,6 @@
     <Reference Include="System.Management.Automation, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\..\..\packages\PowerShellStandard.Library.5.1.0\lib\netstandard2.0\System.Management.Automation.dll</HintPath>
     </Reference>
-    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -51,11 +50,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Feedback\Commands\FeedbackBaseCommand.cs" />
     <Compile Include="Feedback\GetFeedback.cs" />
     <Compile Include="Helpers.cs" />
     <Compile Include="ICommandInitials.cs" />
-    <Compile Include="Internal\Commands\InternalBaseCommand.cs" />
     <Compile Include="Internal\Commands\Get.cs" />
     <Compile Include="Internal\Commands\Set.cs" />
     <Compile Include="Internal\GetInternal.cs" />
@@ -64,6 +61,7 @@
     <Compile Include="Feedback\Commands\Get.cs" />
     <Compile Include="Feedback\SetFeedback.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TeamManagmentCmdletBase.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\ProductivityTools.TeamManagement.Cmdlet.ClientCaller\ProductivityTools.TeamManagement.Cmdlet.ClientCaller.csproj">

@@ -48,6 +48,7 @@
     <Compile Include="Feedback\IFeedback.cs" />
     <Compile Include="Internal\InternalInformation.cs" />
     <Compile Include="Internal\PersonInternalInformation.cs" />
+    <Compile Include="Internal\SaveInternalInformation.cs" />
     <Compile Include="WorkTime\IWorkTime.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WorkTime\DaySummary.cs" />

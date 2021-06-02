@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace PSTeamManagment.Cmdlet.InternalInformation.Commands
 {
-    public class Get : InternalBaseCommand<GetInternal>
+    public class Get : TeamManagmentCmdletBase<GetInternal>
     {
         protected override bool Condition => this.Cmdlet.Initials.AnyPersonInitial();
 
@@ -15,10 +15,7 @@ namespace PSTeamManagment.Cmdlet.InternalInformation.Commands
 
         protected override void Invoke()
         {
-            //this.Client.GetInternalInformation(PersonInitialList);
-
-            var perfonFeedbackList = this.Client.GetInternalInformation(this.Cmdlet.Initials.SplitToList());
-            this.CloseClient();
+            var perfonFeedbackList = base.ApiClient.GetInternalInformation(this.Cmdlet.Initials.SplitToList());
 
             foreach (var person in perfonFeedbackList)
             {

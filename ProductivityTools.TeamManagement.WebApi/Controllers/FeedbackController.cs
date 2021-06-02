@@ -9,9 +9,10 @@ using ProductivityTools.TeamManagement.WebApi.Application;
 
 namespace ProductivityTools.TeamManagement.WebApi.Controllers
 {
+    [ApiController]
+    [Route("[controller]")]
     public class FeedbackController : Controller
     {
-
         TeamManagmentContext DbContext;
 
         public FeedbackController(TeamManagmentContext context)
@@ -24,6 +25,8 @@ namespace ProductivityTools.TeamManagement.WebApi.Controllers
             return View();
         }
 
+        [HttpPost]
+        [Route("GetFeedback")]
         public List<PersonFeedback> GetFeedback(List<string> initials)
         {
             var people = Helpers.GetPerson(DbContext,initials);
@@ -41,6 +44,8 @@ namespace ProductivityTools.TeamManagement.WebApi.Controllers
             return personFeedbacks;
         }
 
+        [HttpPost]
+        [Route("SaveFeedback")]
         public void SaveFeedback(List<string> initials, string value)
         {
             var people = Helpers.GetPerson(DbContext,initials);

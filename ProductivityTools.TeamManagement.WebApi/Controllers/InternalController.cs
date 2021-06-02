@@ -9,9 +9,10 @@ using PSTeamFeedback.Contract.Internal;
 
 namespace ProductivityTools.TeamManagement.WebApi.Controllers
 {
+    [ApiController]
+    [Route("[controller]")]
     public class InternalController : Controller
     {
-
         TeamManagmentContext DbContext;
 
         public InternalController(TeamManagmentContext context)
@@ -19,15 +20,16 @@ namespace ProductivityTools.TeamManagement.WebApi.Controllers
             this.DbContext = context;
         }
 
-
         public IActionResult Index()
         {
             return View();
         }
 
+        [HttpPost]
+        [Route("GetInternalInformation")]
         public List<PersonInternalInformation> GetInternalInformation(List<string> initials)
         {
-            var people = Helpers.GetPerson(DbContext,initials);
+            var people = Helpers.GetPerson(DbContext, initials);
 
             List<PersonInternalInformation> personInternalInformation = new List<PersonInternalInformation>();
             foreach (var person in people)
@@ -42,9 +44,11 @@ namespace ProductivityTools.TeamManagement.WebApi.Controllers
             return personInternalInformation;
         }
 
+        [HttpPost]
+        [Route("SaveInternalInformation")]
         public void SaveInternalInformation(List<string> initials, string value)
         {
-            var people = Helpers.GetPerson(DbContext,initials);
+            var people = Helpers.GetPerson(DbContext, initials);
             foreach (var person in people)
             {
                 var internalInformation = new Database.Schema.Internal();

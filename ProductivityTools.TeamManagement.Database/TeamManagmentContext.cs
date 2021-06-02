@@ -35,7 +35,7 @@ namespace ProductivityTools.TeamManagement.Database
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer(configuration.GetConnectionString("Meetings"));
+                optionsBuilder.UseSqlServer(configuration.GetConnectionString("TeamManagment"));
                 optionsBuilder.UseLoggerFactory(GetLoggerFactory());
                 optionsBuilder.EnableSensitiveDataLogging();
                 base.OnConfiguring(optionsBuilder);

@@ -35,40 +35,40 @@ pipeline {
         }
         stage('copyDbMigratorFiles') {
             steps {
-                bat('xcopy "C:\\Program Files (x86)\\Jenkins\\workspace\\Meetings\\src\\Server\\ProductivityTools.Meetings.DatabaseMigrations\\bin\\Release\\netcoreapp3.1\\publish" "C:\\Bin\\MeetingsDdbMigration\\" /O /X /E /H /K')
+                bat('xcopy "c:\Program Files (x86)\Jenkins\workspace\TeamManagement\ProductivityTools.TeamManagement.Api.DatabaseMigrations\bin\Release\netcoreapp3.1\publish\" "C:\\Bin\\TeamManagementDdbMigration\\" /O /X /E /H /K')
             }
         }
 
         stage('runDbMigratorFiles') {
             steps {
-                bat('C:\\Bin\\MeetingsDdbMigration\\ProductivityTools.Meetings.DatabaseMigrations.exe')
+                bat('C:\\Bin\\TeamManagementDdbMigration\\ProductivityTools.TeamManagement.Api.DatabaseMigrations.exe')
             }
         }
 
         stage('stopMeetingsOnIis') {
             steps {
-                bat('%windir%\\system32\\inetsrv\\appcmd stop site /site.name:meetings')
+                bat('%windir%\\system32\\inetsrv\\appcmd stop site /site.name:teammanagement')
             }
         }
 
         stage('deleteIisDir') {
             steps {
                 retry(5) {
-                    bat('if exist "C:\\Bin\\Meetings" RMDIR /Q/S "C:\\Bin\\Meetings"')
+                    bat('if exist "C:\\Bin\\TeamManagement" RMDIR /Q/S "C:\\Bin\\TeamManagement"')
                 }
 
             }
         }
         stage('copyIisFiles') {
             steps {
-                bat('xcopy "C:\\Program Files (x86)\\Jenkins\\workspace\\Meetings\\src\\Server\\ProductivityTools.Meetings.WebApi\\bin\\Release\\netcoreapp3.1\\publish" "C:\\Bin\\Meetings\\" /O /X /E /H /K')
+                bat('xcopy "c:\Program Files (x86)\Jenkins\workspace\TeamManagement\ProductivityTools.TeamManagement.Api\bin\Release\netcoreapp3.1\publish\" "C:\\Bin\\TeamManagement\\" /O /X /E /H /K')
 				                      
             }
         }
 
         stage('startMeetingsOnIis') {
             steps {
-                bat('%windir%\\system32\\inetsrv\\appcmd start site /site.name:meetings')
+                bat('%windir%\\system32\\inetsrv\\appcmd start site /site.name:teammanagement')
             }
         }
         stage('byebye') {

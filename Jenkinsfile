@@ -25,7 +25,7 @@ pipeline {
         }
         stage('build') {
             steps {
-                bat(script: "dotnet publish ProductivityTools.Meetings.sln -c Release ", returnStdout: true)
+                bat(script: "dotnet publish ProductivityTools.TeamManagement.Api.sln -c Release ", returnStdout: true)
             }
         }
         stage('deleteDbMigratorDir') {

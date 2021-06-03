@@ -5,10 +5,6 @@ VisualStudioVersion = 16.0.30002.166
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Server", "Server", "{617DB4AF-6DF3-46CB-9941-545D3D825F81}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductivityTools.TeamManagement.WCFService", "src\Server\ProductivityTools.TeamManagement.WCFService\ProductivityTools.TeamManagement.WCFService.csproj", "{96756B79-1695-49EE-AFC5-8E690083B241}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductivityTools.TeamManagement.WindowsServiceRunner", "src\Server\ProductivityTools.TeamManagement.WindowsServiceRunner\ProductivityTools.TeamManagement.WindowsServiceRunner.csproj", "{EFEF07E2-9F31-47DB-9045-9C5BB636C3E1}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductivityTools.TeamManagement.DBScripts", "src\Server\ProductivityTools.TeamManagement.DBScripts\ProductivityTools.TeamManagement.DBScripts.csproj", "{01A2B0CD-A1F8-4D83-B105-24350368D7F3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductivityTools.TeamManagement.DB", "src\Server\ProductivityTools.TeamManagement.DB\ProductivityTools.TeamManagement.DB.csproj", "{A8C3FC10-876C-4F0B-9B9D-5FD5854C32E9}"
@@ -25,14 +21,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{96756B79-1695-49EE-AFC5-8E690083B241}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{96756B79-1695-49EE-AFC5-8E690083B241}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{96756B79-1695-49EE-AFC5-8E690083B241}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{96756B79-1695-49EE-AFC5-8E690083B241}.Release|Any CPU.Build.0 = Release|Any CPU
-		{EFEF07E2-9F31-47DB-9045-9C5BB636C3E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EFEF07E2-9F31-47DB-9045-9C5BB636C3E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EFEF07E2-9F31-47DB-9045-9C5BB636C3E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EFEF07E2-9F31-47DB-9045-9C5BB636C3E1}.Release|Any CPU.Build.0 = Release|Any CPU
 		{01A2B0CD-A1F8-4D83-B105-24350368D7F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{01A2B0CD-A1F8-4D83-B105-24350368D7F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{01A2B0CD-A1F8-4D83-B105-24350368D7F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -58,8 +46,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{96756B79-1695-49EE-AFC5-8E690083B241} = {617DB4AF-6DF3-46CB-9941-545D3D825F81}
-		{EFEF07E2-9F31-47DB-9045-9C5BB636C3E1} = {617DB4AF-6DF3-46CB-9941-545D3D825F81}
 		{01A2B0CD-A1F8-4D83-B105-24350368D7F3} = {617DB4AF-6DF3-46CB-9941-545D3D825F81}
 		{A8C3FC10-876C-4F0B-9B9D-5FD5854C32E9} = {617DB4AF-6DF3-46CB-9941-545D3D825F81}
 	EndGlobalSection

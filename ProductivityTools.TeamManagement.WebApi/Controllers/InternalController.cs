@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using ProductivityTools.TeamManagement.Contract.Internal;
 using ProductivityTools.TeamManagement.Database;
 using ProductivityTools.TeamManagement.WebApi.Application;
-using PSTeamFeedback.Contract.Internal;
 
 namespace ProductivityTools.TeamManagement.WebApi.Controllers
 {

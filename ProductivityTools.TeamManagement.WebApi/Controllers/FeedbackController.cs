@@ -6,7 +6,6 @@ using Microsoft.AspNetCore.Mvc;
 using ProductivityTools.TeamManagement.Contract.Feedback;
 using ProductivityTools.TeamManagement.Database;
 using ProductivityTools.TeamManagement.WebApi.Application;
-using PSTeamFeedback.Contract.Feedback;
 
 namespace ProductivityTools.TeamManagement.WebApi.Controllers
 {

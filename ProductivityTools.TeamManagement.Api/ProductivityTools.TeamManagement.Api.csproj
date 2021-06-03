@@ -10,7 +10,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ProductivityTools.TeamManagement.Database\ProductivityTools.TeamManagement.Database.csproj" />
+    <ProjectReference Include="..\ProductivityTools.TeamManagement.Api.Database\ProductivityTools.TeamManagement.Api.Database.csproj" />
   </ItemGroup>
 
 

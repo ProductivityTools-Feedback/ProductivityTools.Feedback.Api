@@ -1,1 +1,0 @@
-﻿ALTER TABLE [tm].[One2One] ALTER COLUMN [Value] VARCHAR(maX)

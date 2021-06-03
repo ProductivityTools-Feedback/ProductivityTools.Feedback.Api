@@ -45,7 +45,7 @@ pipeline {
             }
         }
 
-        stage('stopMeetingsOnIis') {
+        stage('stopSiteOnIis') {
             steps {
                 bat('%windir%\\system32\\inetsrv\\appcmd stop site /site.name:teammanagement')
             }
@@ -66,7 +66,7 @@ pipeline {
             }
         }
 
-        stage('startMeetingsOnIis') {
+        stage('startSiteOnIis') {
             steps {
                 bat('%windir%\\system32\\inetsrv\\appcmd start site /site.name:teammanagement')
             }

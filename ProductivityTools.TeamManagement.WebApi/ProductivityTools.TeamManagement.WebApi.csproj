@@ -10,7 +10,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ProductivityTools.TeamManagement.Database\ProductivityTools.TeamManagement.Database.csproj" />
-    <ProjectReference Include="..\src\Common\ProductivityTools.TeamManagement.Contract\ProductivityTools.TeamManagement.Contract.csproj" />
   </ItemGroup>
 
 

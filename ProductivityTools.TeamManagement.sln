@@ -3,25 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30002.166
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductivityTools.TeamManagement.WindowsService", "src\Server\ProductivityTools.TeamManagement.WindowsService\ProductivityTools.TeamManagement.WindowsService.csproj", "{824B1F5D-AF65-4CE6-B587-9DCBDD8FE9EE}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Server", "Server", "{617DB4AF-6DF3-46CB-9941-545D3D825F81}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Client", "Client", "{350D5770-B4E6-4745-96D0-DB0894E7834D}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{C88FBEFB-8105-4AB8-9FBA-4AFD8DB7FFB1}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductivityTools.TeamManagement.WCFService", "src\Server\ProductivityTools.TeamManagement.WCFService\ProductivityTools.TeamManagement.WCFService.csproj", "{96756B79-1695-49EE-AFC5-8E690083B241}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductivityTools.TeamManagement.WindowsServiceRunner", "src\Server\ProductivityTools.TeamManagement.WindowsServiceRunner\ProductivityTools.TeamManagement.WindowsServiceRunner.csproj", "{EFEF07E2-9F31-47DB-9045-9C5BB636C3E1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductivityTools.TeamManagement.Contract", "src\Common\ProductivityTools.TeamManagement.Contract\ProductivityTools.TeamManagement.Contract.csproj", "{19D06141-4588-4D49-8B46-9099DA3E2D12}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductivityTools.TeamManagement.DBScripts", "src\Server\ProductivityTools.TeamManagement.DBScripts\ProductivityTools.TeamManagement.DBScripts.csproj", "{01A2B0CD-A1F8-4D83-B105-24350368D7F3}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductivityTools.TeamManagement.Cmdlet", "src\Client\ProductivityTools.TeamManagement.Cmdlet\ProductivityTools.TeamManagement.Cmdlet.csproj", "{FB05AD16-1A16-4410-AA62-E8B581F74CE4}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductivityTools.TeamManagement.Configuration", "src\Common\ProductivityTools.TeamManagement.Configuration\ProductivityTools.TeamManagement.Configuration.csproj", "{D7744F70-3C03-43D8-9407-D7996EDAF31C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductivityTools.TeamManagement.DB", "src\Server\ProductivityTools.TeamManagement.DB\ProductivityTools.TeamManagement.DB.csproj", "{A8C3FC10-876C-4F0B-9B9D-5FD5854C32E9}"
 EndProject
@@ -31,18 +19,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductivityTools.TeamManag
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductivityTools.TeamManagement.DatabaseMigrations", "ProductivityTools.TeamManagement.DatabaseMigrations\ProductivityTools.TeamManagement.DatabaseMigrations.csproj", "{CE2957E7-16EA-4D95-A87F-E86349BE9EF4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductivityTools.TeamManagement.Cmdlet.ClientCaller", "ProductivityTools.TeamManagement.Cmdlet.ClientCaller\ProductivityTools.TeamManagement.Cmdlet.ClientCaller.csproj", "{09FB6E72-3FAB-4195-92D6-B9D289991489}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{824B1F5D-AF65-4CE6-B587-9DCBDD8FE9EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{824B1F5D-AF65-4CE6-B587-9DCBDD8FE9EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{824B1F5D-AF65-4CE6-B587-9DCBDD8FE9EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{824B1F5D-AF65-4CE6-B587-9DCBDD8FE9EE}.Release|Any CPU.Build.0 = Release|Any CPU
 		{96756B79-1695-49EE-AFC5-8E690083B241}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{96756B79-1695-49EE-AFC5-8E690083B241}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{96756B79-1695-49EE-AFC5-8E690083B241}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -51,22 +33,10 @@ Global
 		{EFEF07E2-9F31-47DB-9045-9C5BB636C3E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EFEF07E2-9F31-47DB-9045-9C5BB636C3E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EFEF07E2-9F31-47DB-9045-9C5BB636C3E1}.Release|Any CPU.Build.0 = Release|Any CPU
-		{19D06141-4588-4D49-8B46-9099DA3E2D12}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{19D06141-4588-4D49-8B46-9099DA3E2D12}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{19D06141-4588-4D49-8B46-9099DA3E2D12}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{19D06141-4588-4D49-8B46-9099DA3E2D12}.Release|Any CPU.Build.0 = Release|Any CPU
 		{01A2B0CD-A1F8-4D83-B105-24350368D7F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{01A2B0CD-A1F8-4D83-B105-24350368D7F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{01A2B0CD-A1F8-4D83-B105-24350368D7F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{01A2B0CD-A1F8-4D83-B105-24350368D7F3}.Release|Any CPU.Build.0 = Release|Any CPU
-		{FB05AD16-1A16-4410-AA62-E8B581F74CE4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FB05AD16-1A16-4410-AA62-E8B581F74CE4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FB05AD16-1A16-4410-AA62-E8B581F74CE4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FB05AD16-1A16-4410-AA62-E8B581F74CE4}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D7744F70-3C03-43D8-9407-D7996EDAF31C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D7744F70-3C03-43D8-9407-D7996EDAF31C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D7744F70-3C03-43D8-9407-D7996EDAF31C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D7744F70-3C03-43D8-9407-D7996EDAF31C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{A8C3FC10-876C-4F0B-9B9D-5FD5854C32E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{A8C3FC10-876C-4F0B-9B9D-5FD5854C32E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A8C3FC10-876C-4F0B-9B9D-5FD5854C32E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -83,24 +53,15 @@ Global
 		{CE2957E7-16EA-4D95-A87F-E86349BE9EF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CE2957E7-16EA-4D95-A87F-E86349BE9EF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CE2957E7-16EA-4D95-A87F-E86349BE9EF4}.Release|Any CPU.Build.0 = Release|Any CPU
-		{09FB6E72-3FAB-4195-92D6-B9D289991489}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{09FB6E72-3FAB-4195-92D6-B9D289991489}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{09FB6E72-3FAB-4195-92D6-B9D289991489}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{09FB6E72-3FAB-4195-92D6-B9D289991489}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{824B1F5D-AF65-4CE6-B587-9DCBDD8FE9EE} = {617DB4AF-6DF3-46CB-9941-545D3D825F81}
 		{96756B79-1695-49EE-AFC5-8E690083B241} = {617DB4AF-6DF3-46CB-9941-545D3D825F81}
 		{EFEF07E2-9F31-47DB-9045-9C5BB636C3E1} = {617DB4AF-6DF3-46CB-9941-545D3D825F81}
-		{19D06141-4588-4D49-8B46-9099DA3E2D12} = {C88FBEFB-8105-4AB8-9FBA-4AFD8DB7FFB1}
 		{01A2B0CD-A1F8-4D83-B105-24350368D7F3} = {617DB4AF-6DF3-46CB-9941-545D3D825F81}
-		{FB05AD16-1A16-4410-AA62-E8B581F74CE4} = {350D5770-B4E6-4745-96D0-DB0894E7834D}
-		{D7744F70-3C03-43D8-9407-D7996EDAF31C} = {C88FBEFB-8105-4AB8-9FBA-4AFD8DB7FFB1}
 		{A8C3FC10-876C-4F0B-9B9D-5FD5854C32E9} = {617DB4AF-6DF3-46CB-9941-545D3D825F81}
-		{09FB6E72-3FAB-4195-92D6-B9D289991489} = {350D5770-B4E6-4745-96D0-DB0894E7834D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5DABE635-8C87-4771-B8B3-8126A54B45E9}

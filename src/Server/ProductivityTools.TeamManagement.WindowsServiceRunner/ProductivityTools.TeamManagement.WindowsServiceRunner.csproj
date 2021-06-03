@@ -57,15 +57,5 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\Common\ProductivityTools.TeamManagement.Configuration\ProductivityTools.TeamManagement.Configuration.csproj">
-      <Project>{d7744f70-3c03-43d8-9407-d7996edaf31c}</Project>
-      <Name>PSTeamManagement.Configuration</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\ProductivityTools.TeamManagement.WindowsService\ProductivityTools.TeamManagement.WindowsService.csproj">
-      <Project>{824b1f5d-af65-4ce6-b587-9dcbdd8fe9ee}</Project>
-      <Name>PSTeamManagement.WindowsService</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

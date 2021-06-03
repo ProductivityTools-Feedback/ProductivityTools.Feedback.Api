@@ -44,16 +44,10 @@
     <Compile Include="Feedback\Feedback.cs" />
     <Compile Include="Feedback\PersonFeedback.cs" />
     <Compile Include="Feedback\SaveFeedback.cs" />
-    <Compile Include="Internal\IInternal.cs" />
-    <Compile Include="Feedback\IFeedback.cs" />
     <Compile Include="Internal\InternalInformation.cs" />
     <Compile Include="Internal\PersonInternalInformation.cs" />
     <Compile Include="Internal\SaveInternalInformation.cs" />
-    <Compile Include="WorkTime\IWorkTime.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="WorkTime\DaySummary.cs" />
-    <Compile Include="WorkTime\Person.cs" />
-    <Compile Include="WorkTime\PersonSummary.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

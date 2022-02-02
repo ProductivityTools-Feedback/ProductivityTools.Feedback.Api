@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using ProductivityTools.TeamManagement.Contract.Internal;
 using ProductivityTools.TeamManagement.Database;
@@ -26,6 +27,7 @@ namespace ProductivityTools.TeamManagement.WebApi.Controllers
         }
 
         [HttpPost]
+        [Authorize]
         [Route("GetInternalInformation")]
         public List<PersonInternalInformation> GetInternalInformation(List<string> initials)
         {
@@ -45,6 +47,7 @@ namespace ProductivityTools.TeamManagement.WebApi.Controllers
         }
 
         [HttpPost]
+        [Authorize]
         [Route("SaveInternalInformation")]
         public void SaveInternalInformation(SaveInternalInformation input)
         {

@@ -61,7 +61,7 @@ pipeline {
         }
         stage('copyIisFiles') {
             steps {
-                bat('xcopy "c:\\Program Files (x86)\\Jenkins\\workspace\\TeamManagement\\ProductivityTools.TeamManagement.Api\\bin\\Release\\netcoreapp3.1\\publish\\" "C:\\Bin\\TeamManagement\\" /O /X /E /H /K')
+                bat('xcopy "c:\\Program Files (x86)\\Jenkins\\workspace\\TeamManagement\\ProductivityTools.TeamManagement.Api\\bin\\Release\\net6.0\\publish\\" "C:\\Bin\\TeamManagement\\" /O /X /E /H /K')
 				                      
             }
         }

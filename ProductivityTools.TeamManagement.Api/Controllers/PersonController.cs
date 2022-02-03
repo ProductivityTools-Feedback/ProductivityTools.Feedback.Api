@@ -5,7 +5,7 @@ using ProductivityTools.TeamManagement.Database.Schema;
 
 namespace ProductivityTools.TeamManagement.Api.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("[controller]")]
     [ApiController]
     public class PersonController : ControllerBase
     {
@@ -16,14 +16,15 @@ namespace ProductivityTools.TeamManagement.Api.Controllers
             this.DbContext = context;
         }
 
-
-        public IActionResult Add(string firstName, string lastName, string initials, string category)
+        [HttpPost]
+        [Route("Add")]
+        public IActionResult Add( Person p)
         {
-            Person person = new Person();
-            person.FirstName = firstName;
-            person.LastName = lastName;
-            person.Initials = initials;
-            person.Category = category; 
+            var person = new Database.Schema.Person();
+            person.FirstName = p.FirstName;
+            person.LastName = p.LastName;
+            person.Initials = p.Initials;
+            person.Category = p.Category; 
             this.DbContext.Person.Add(person);
             this.DbContext.SaveChanges();
             return Ok(person);

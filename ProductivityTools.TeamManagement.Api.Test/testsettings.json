@@ -1,0 +1,13 @@
+{
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft": "Warning",
+      "Microsoft.Hosting.Lifetime": "Information"
+    }
+  },
+  "ConnectionStrings": {
+    "TeamManagment": "Server=.\\sql2019;Database=PTTeamManagement;Integrated Security=True"
+  },
+  "AllowedHosts": "*"
+}

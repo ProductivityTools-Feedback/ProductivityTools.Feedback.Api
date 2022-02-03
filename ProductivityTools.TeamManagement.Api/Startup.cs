@@ -37,7 +37,7 @@ namespace ProductivityTools.TeamManagement.WebApi
             }).AddJwtBearer(options =>
             {
                 options.Authority = "https://identityserver.productivitytools.tech:8010";
-                options.Audience = "Salaries.API";
+                options.Audience = "TM.API";
             });
 
             services.AddLogging(opt =>

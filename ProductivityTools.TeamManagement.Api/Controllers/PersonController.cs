@@ -2,6 +2,8 @@
 using Microsoft.AspNetCore.Mvc;
 using ProductivityTools.TeamManagement.Database;
 using ProductivityTools.TeamManagement.Database.Schema;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace ProductivityTools.TeamManagement.Api.Controllers
 {
@@ -28,6 +30,15 @@ namespace ProductivityTools.TeamManagement.Api.Controllers
             this.DbContext.Person.Add(person);
             this.DbContext.SaveChanges();
             return Ok(person);
+        }
+
+        [HttpPost]
+        [Route("GetList")]
+        public List<Person> GetList()
+        {
+            List<Person> r = this.DbContext.Person.Select(x => new Person { FirstName = x.FirstName, LastName = x.LastName, Initials = x.Initials, Category = x.Category }).ToList();
+            
+            return r;
         }
     }
 }

@@ -41,7 +41,7 @@ namespace ProductivityTools.TeamManagement.Api.Test
         [TestMethod]
         public void GetFeedback()
         {
-            
+
             using (var context = ServiceProvider.GetService<TeamManagmentContext>())
             {
                 FeedbackController controller = new FeedbackController(context);
@@ -57,7 +57,19 @@ namespace ProductivityTools.TeamManagement.Api.Test
             using (var context = ServiceProvider.GetService<TeamManagmentContext>())
             {
                 PersonController controller = new PersonController(context);
-                var result = controller.Add("Pawel", "Wujczyk", "pw1","empty");
+                var result = controller.Add(new Database.Schema.Person { FirstName = "Pawel", LastName = "Wujczyk", Initials = "pw1", Category = "empty" });
+                Console.WriteLine(result);
+            }
+        }
+
+        [TestMethod]
+        public void GetList()
+        {
+
+            using (var context = ServiceProvider.GetService<TeamManagmentContext>())
+            {
+                PersonController controller = new PersonController(context);
+                var result = controller.GetList();
                 Console.WriteLine(result);
             }
         }

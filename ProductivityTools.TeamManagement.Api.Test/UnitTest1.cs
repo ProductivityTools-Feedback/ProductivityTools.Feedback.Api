@@ -66,7 +66,7 @@ namespace ProductivityTools.TeamManagement.Api.Test
         public void GetList()
         {
 
-            using (var context = ServiceProvider.GetService<TeamManagmentContext>())
+             using (var context = ServiceProvider.GetService<TeamManagmentContext>())
             {
                 PersonController controller = new PersonController(context);
                 var result = controller.GetList();

@@ -36,7 +36,7 @@ namespace ProductivityTools.TeamManagement.WebApi
                 options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
             }).AddJwtBearer(options =>
             {
-                options.Authority = "https://identityserver.productivitytools.tech:8010";
+                options.Authority = "https://identityserver.productivitytools.top:8010";
                 options.Audience = "TM.API";
             });
 

@@ -23,9 +23,11 @@
     <None Remove="Scripts\020.NVarcharFeedback.sql" />
     <None Remove="Scripts\021.Meetings.sql" />
     <None Remove="Scripts\022.MeetingsPerson1.sql" />
+    <None Remove="Scripts\023.NVarcharFeedback.sql" />
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="Scripts\023.NVarcharFeedback.sql" />
     <EmbeddedResource Include="Scripts\022.MeetingsPerson1.sql" />
   </ItemGroup>
 

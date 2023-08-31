@@ -1,0 +1,6 @@
+﻿ALTER TABLE [tm].[Feedback] ALTER COLUMN [Value] NVARCHAR(4000)
+ALTER TABLE [tm].[Feedback] ALTER COLUMN [ReFeedback] NVARCHAR(1000)
+
+ALTER TABLE [tm].[Internal] ALTER COLUMN [Value] NVARCHAR(4000)
+
+

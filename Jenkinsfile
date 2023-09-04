@@ -35,7 +35,7 @@ pipeline {
         }
         stage('copyDbMigratorFiles') {
             steps {
-                bat('xcopy "c:\\Program Files (x86)\\Jenkins\\workspace\\TeamManagement\\ProductivityTools.TeamManagement.Api.DatabaseMigrations\\bin\\Release\\netcoreapp3.1\\publish\\" "C:\\Bin\\TeamManagementDdbMigration\\" /O /X /E /H /K')
+                bat('xcopy "c:\\ProgramData\\Jenkins\\.jenkins\\workspace\\TeamManagement\\ProductivityTools.TeamManagement.Api.DatabaseMigrations\\bin\\Release\\netcoreapp3.1\\publish\\" "C:\\Bin\\TeamManagementDdbMigration\\" /O /X /E /H /K')
             }
         }
 

@@ -4,6 +4,8 @@ using System.Threading.Tasks;
 
 namespace ProductivityTools.TeamManagement.Api.Controllers
 {
+    [ApiController]
+    [Route("[controller]")]
     public class CustomTokenController : Controller
     {
         [HttpGet]

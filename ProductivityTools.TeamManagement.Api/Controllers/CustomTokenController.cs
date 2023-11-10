@@ -33,8 +33,6 @@ namespace ProductivityTools.TeamManagement.Api.Controllers
             {
                 return Unauthorized();
             }
-
-            
         }
     }
 }

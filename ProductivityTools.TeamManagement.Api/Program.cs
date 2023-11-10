@@ -31,13 +31,13 @@ builder.Services
  .AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
  .AddJwtBearer(options =>
  {
-     options.Authority = "https://securetoken.google.com/pttransfersprod";
+     options.Authority = "https://identityserver.productivitytools.top:8010";
      options.TokenValidationParameters = new TokenValidationParameters
      {
          ValidateIssuer = true,
-         ValidIssuer = "https://securetoken.google.com/pttransfersprod",
+         ValidIssuer = "https://identityserver.productivitytools.top:8010",
          ValidateAudience = true,
-         ValidAudience = "pttransfersprod",
+         ValidAudience = "TM.API",
          ValidateLifetime = true
      };
  });

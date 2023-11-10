@@ -14,12 +14,8 @@ using ProductivityTools.EchoApi;
 
 string MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
 var builder = WebApplication.CreateBuilder(args);
-
-IConfigurationRoot configuration =
-              new ConfigurationBuilder()
-              .AddMasterConfiguration(configName: "ProductivityTools.TeamManagement.Api.json", force: true)
+builder.Configuration.AddMasterConfiguration(configName: "ProductivityTools.TeamManagement.Api.json", force: true)
               .Build();
-var x = configuration["cmdletPassword"];
 
 string masterconfpath = Environment.GetEnvironmentVariable("MasterConfigurationPath");
 FirebaseApp.Create(new AppOptions()

@@ -1,10 +1,10 @@
-﻿using ProductivityTools.TeamManagement.Database;
+﻿using ProductivityTools.Feedback.Database;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace ProductivityTools.TeamManagement.WebApi.Application
+namespace ProductivityTools.Feedback.WebApi.Application
 {
     public static class Helpers
     {

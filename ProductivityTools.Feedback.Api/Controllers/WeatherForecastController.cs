@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
-namespace ProductivityTools.TeamManagement.WebApi.Controllers
+namespace ProductivityTools.Feedback.WebApi.Controllers
 {
     [ApiController]
     [Route("[controller]")]

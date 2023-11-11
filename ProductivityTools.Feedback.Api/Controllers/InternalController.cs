@@ -4,11 +4,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using ProductivityTools.TeamManagement.Contract.Internal;
-using ProductivityTools.TeamManagement.Database;
-using ProductivityTools.TeamManagement.WebApi.Application;
+using ProductivityTools.Feedback.Contract.Internal;
+using ProductivityTools.Feedback.Database;
+using ProductivityTools.Feedback.WebApi.Application;
 
-namespace ProductivityTools.TeamManagement.WebApi.Controllers
+namespace ProductivityTools.Feedback.WebApi.Controllers
 {
     [ApiController]
     [Route("[controller]")]

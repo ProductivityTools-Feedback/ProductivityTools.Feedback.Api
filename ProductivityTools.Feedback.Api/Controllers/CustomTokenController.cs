@@ -5,7 +5,7 @@ using Microsoft.Extensions.Configuration;
 using System.Net;
 using System.Threading.Tasks;
 
-namespace ProductivityTools.TeamManagement.Api.Controllers
+namespace ProductivityTools.Feedback.Api.Controllers
 {
     [ApiController]
     [Route("[controller]")]

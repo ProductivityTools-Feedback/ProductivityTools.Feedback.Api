@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace ProductivityTools.TeamManagement.Database.Schema
+namespace ProductivityTools.Feedback.Database.Schema
 {
     public class Person
     {

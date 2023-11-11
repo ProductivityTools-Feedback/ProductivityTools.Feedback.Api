@@ -27,8 +27,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ProductivityTools.TeamManagement.Api.Database\ProductivityTools.TeamManagement.Api.Database.csproj" />
-    <ProjectReference Include="..\ProductivityTools.TeamManagement.Api\ProductivityTools.TeamManagement.Api.csproj" />
+    <ProjectReference Include="..\ProductivityTools.Feedback.Api.Database\ProductivityTools.Feedback.Api.Database.csproj" />
+    <ProjectReference Include="..\ProductivityTools.Feedback.Api\ProductivityTools.Feedback.Api.csproj" />
   </ItemGroup>
 
 </Project>

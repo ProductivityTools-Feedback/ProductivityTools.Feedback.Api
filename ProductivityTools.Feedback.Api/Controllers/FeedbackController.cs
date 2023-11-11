@@ -4,11 +4,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using ProductivityTools.TeamManagement.Contract.Feedback;
-using ProductivityTools.TeamManagement.Database;
-using ProductivityTools.TeamManagement.WebApi.Application;
+using ProductivityTools.Feedback.Contract.Feedback;
+using ProductivityTools.Feedback.Database;
+using ProductivityTools.Feedback.WebApi.Application;
 
-namespace ProductivityTools.TeamManagement.WebApi.Controllers
+namespace ProductivityTools.Feedback.WebApi.Controllers
 {
     [ApiController]
     [Route("[controller]")]
@@ -38,7 +38,7 @@ namespace ProductivityTools.TeamManagement.WebApi.Controllers
             {
                 var feedbacks = (from f in DbContext.Feedback
                                  where f.Person.Initials == person.Initials
-                                 select new Feedback() { Date = f.CreatedDate, Value = f.Value }).ToList();
+                                 select new Contract.Feedback.Feedback() { Date = f.CreatedDate, Value = f.Value }).ToList();
                 personFeedbacks.Add(new PersonFeedback { FirstName = person.FirstName, LastName = person.FirstName, Feedback = feedbacks });
 
             }

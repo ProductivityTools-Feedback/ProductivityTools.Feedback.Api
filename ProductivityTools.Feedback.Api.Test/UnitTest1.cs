@@ -1,12 +1,12 @@
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using ProductivityTools.TeamManagement.Api.Controllers;
-using ProductivityTools.TeamManagement.Database;
-using ProductivityTools.TeamManagement.WebApi.Controllers;
+using ProductivityTools.Feedback.Api.Controllers;
+using ProductivityTools.Feedback.Database;
+using ProductivityTools.Feedback.WebApi.Controllers;
 using System;
 
-namespace ProductivityTools.TeamManagement.Api.Test
+namespace ProductivityTools.Feedback.Api.Test
 {
     [TestClass]
     public class UnitTest1

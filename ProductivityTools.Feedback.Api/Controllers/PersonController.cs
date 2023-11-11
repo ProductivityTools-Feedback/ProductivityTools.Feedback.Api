@@ -1,11 +1,11 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using ProductivityTools.TeamManagement.Database;
-using ProductivityTools.TeamManagement.Database.Schema;
+using ProductivityTools.Feedback.Database;
+using ProductivityTools.Feedback.Database.Schema;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace ProductivityTools.TeamManagement.Api.Controllers
+namespace ProductivityTools.Feedback.Api.Controllers
 {
     [Route("[controller]")]
     [ApiController]

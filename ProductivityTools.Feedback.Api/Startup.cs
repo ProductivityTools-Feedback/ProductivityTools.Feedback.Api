@@ -16,9 +16,9 @@ using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Logging;
 using ProductivityTools.EchoApi;
 using ProductivityTools.MasterConfiguration;
-using ProductivityTools.TeamManagement.Database;
+using ProductivityTools.Feedback.Database;
 
-namespace ProductivityTools.TeamManagement.WebApi
+namespace ProductivityTools.Feedback.WebApi
 {
     public class Startup
     {

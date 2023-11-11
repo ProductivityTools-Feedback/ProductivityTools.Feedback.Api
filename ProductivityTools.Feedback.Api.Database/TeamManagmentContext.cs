@@ -2,10 +2,10 @@
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using ProductivityTools.TeamManagement.Database.Schema;
+using ProductivityTools.Feedback.Database.Schema;
 using System;
 
-namespace ProductivityTools.TeamManagement.Database
+namespace ProductivityTools.Feedback.Database
 {
     public class TeamManagmentContext : DbContext
     {
@@ -16,7 +16,7 @@ namespace ProductivityTools.TeamManagement.Database
             this.configuration = configuration;
         }
 
-        public DbSet<Feedback> Feedback { get; set; }
+        public DbSet<Schema.Feedback> Feedback { get; set; }
         public DbSet<Internal> Internal { get; set; }
         public DbSet<Person> Person { get; set; }
 
@@ -45,8 +45,8 @@ namespace ProductivityTools.TeamManagement.Database
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.HasDefaultSchema("tm");
-            modelBuilder.Entity<Feedback>().HasKey(x => x.FeedbackId);
-            modelBuilder.Entity<Feedback>().HasOne(x => x.Person);
+            modelBuilder.Entity<Schema.Feedback>().HasKey(x => x.FeedbackId);
+            modelBuilder.Entity<Schema.Feedback>().HasOne(x => x.Person);
 
             modelBuilder.Entity<Internal>().HasKey(x => x.InternalId);
             modelBuilder.Entity<Internal>().HasOne(x => x.Person);

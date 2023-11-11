@@ -9,12 +9,12 @@ using ProductivityTools.MasterConfiguration;
 using System;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using ProductivityTools.TeamManagement.Database;
+using ProductivityTools.Feedback.Database;
 using ProductivityTools.EchoApi;
 
 string MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
 var builder = WebApplication.CreateBuilder(args);
-builder.Configuration.AddMasterConfiguration(configName: "ProductivityTools.TeamManagement.Api.json", force: true)
+builder.Configuration.AddMasterConfiguration(configName: "ProductivityTools.Feedback.Api.json", force: true)
               .Build();
 
 string masterconfpath = Environment.GetEnvironmentVariable("MasterConfigurationPath");

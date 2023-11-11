@@ -1,6 +1,6 @@
 using System;
 
-namespace ProductivityTools.TeamManagement.WebApi
+namespace ProductivityTools.Feedback.WebApi
 {
     public class WeatherForecast
     {

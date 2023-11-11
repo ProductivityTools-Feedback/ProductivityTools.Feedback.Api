@@ -2,7 +2,7 @@
 using System;
 using System.Reflection;
 
-namespace ProductivityTools.TeamManagement.DatabaseMigrations
+namespace ProductivityTools.Feedback.DatabaseMigrations
 {
     class Program
     {

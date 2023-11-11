@@ -10,11 +10,11 @@
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.5" />
     <PackageReference Include="ProductivityTools.EchoApi" Version="0.0.3" />
     <PackageReference Include="ProductivityTools.MasterConfiguration" Version="2.0.5" />
-    <PackageReference Include="ProductivityTools.TeamManagement.Contract" Version="0.0.5" />
+    <PackageReference Include="ProductivityTools.Feedback.Contract" Version="0.0.5" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ProductivityTools.TeamManagement.Api.Database\ProductivityTools.TeamManagement.Api.Database.csproj" />
+    <ProjectReference Include="..\ProductivityTools.Feedback.Api.Database\ProductivityTools.Feedback.Api.Database.csproj" />
   </ItemGroup>
 
 

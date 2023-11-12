@@ -19,23 +19,23 @@ pipeline {
         stage('clone') {
             steps {
                 // Get some code from a GitHub repository
-                git branch: 'master',
-                url: 'https://github.com/ProductivityTools-TeamManagement/ProductivityTools.TeamManagement.Api'
+                git branch: 'main',
+                url: 'https://github.com/ProductivityTools-Feedback/ProductivityTools.Feedback.Api.git'
             }
         }
         stage('build') {
             steps {
-                bat(script: "dotnet publish ProductivityTools.TeamManagement.Api.sln -c Release ", returnStdout: true)
+                bat(script: "dotnet publish ProductivityTools.Feedback.Api.sln -c Release ", returnStdout: true)
             }
         }
         stage('deleteDbMigratorDir') {
             steps {
-                bat('if exist "C:\\Bin\\TeamManagementDdbMigration" RMDIR /Q/S "C:\\Bin\\TeamManagementDdbMigration"')
+                bat('if exist "C:\\Bin\\FeedbackDdbMigration" RMDIR /Q/S "C:\\Bin\\FeedbackDdbMigration"')
             }
         }
         stage('copyDbMigratorFiles') {
             steps {
-                bat('xcopy "c:\\ProgramData\\Jenkins\\.jenkins\\workspace\\TeamManagement\\ProductivityTools.TeamManagement.Api.DatabaseMigrations\\bin\\Release\\netcoreapp3.1\\publish\\" "C:\\Bin\\TeamManagementDdbMigration\\" /O /X /E /H /K')
+                bat('xcopy "c:\\ProgramData\\Jenkins\\.jenkins\\workspace\\PTFeedback.Api\\ProductivityTools.TeamManagement.Api.DatabaseMigrations\\bin\\Release\\netcoreapp3.1\\publish\\" "C:\\Bin\\TeamManagementDdbMigration\\" /O /X /E /H /K')
             }
         }
 

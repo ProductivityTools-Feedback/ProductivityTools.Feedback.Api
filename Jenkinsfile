@@ -35,40 +35,40 @@ pipeline {
         }
         stage('copyDbMigratorFiles') {
             steps {
-                bat('xcopy "c:\\ProgramData\\Jenkins\\.jenkins\\workspace\\PTFeedback.Api\\ProductivityTools.TeamManagement.Api.DatabaseMigrations\\bin\\Release\\netcoreapp3.1\\publish\\" "C:\\Bin\\TeamManagementDdbMigration\\" /O /X /E /H /K')
+                bat('xcopy "PTFeedback.Api\\ProductivityTools.Feedback.Api.DatabaseMigrations\\bin\\Release\\net6.0\\publish\\" "C:\\Bin\\DbMigration\\Feedback.Api\\" /O /X /E /H /K')
             }
         }
 
         stage('runDbMigratorFiles') {
             steps {
-                bat('C:\\Bin\\TeamManagementDdbMigration\\ProductivityTools.TeamManagement.Api.DatabaseMigrations.exe')
+                bat('C:\\Bin\\DbMigration\\Feedback.Api\\ProductivityTools.Feedback.Api.DatabaseMigrations.exe')
             }
         }
 
         stage('stopSiteOnIis') {
             steps {
-                bat('%windir%\\system32\\inetsrv\\appcmd stop site /site.name:teammanagement')
+                bat('%windir%\\system32\\inetsrv\\appcmd stop site /site.name:PTFeedback')
             }
         }
 
         stage('deleteIisDir') {
             steps {
                 retry(5) {
-                    bat('if exist "C:\\Bin\\TeamManagement" RMDIR /Q/S "C:\\Bin\\TeamManagement"')
+                    bat('if exist "C:\\Bin\\IIS\\PTFeedback" RMDIR /Q/S "C:\\Bin\\IIS\\PTFeedback"')
                 }
 
             }
         }
         stage('copyIisFiles') {
             steps {
-                bat('xcopy "c:\\ProgramData\\Jenkins\\.jenkins\\workspace\\TeamManagement\\ProductivityTools.TeamManagement.Api\\bin\\Release\\net6.0\\publish\\" "C:\\Bin\\TeamManagement\\" /O /X /E /H /K')
+                bat('xcopy "PTFeedback.Api\\ProductivityTools.Feedback.Api\\bin\\Release\\net6.0\\publish\\" "C:\\Bin\\IIS\\PTFeedback\\" /O /X /E /H /K')
 				                      
             }
         }
 
         stage('startSiteOnIis') {
             steps {
-                bat('%windir%\\system32\\inetsrv\\appcmd start site /site.name:teammanagement')
+                bat('%windir%\\system32\\inetsrv\\appcmd start site /site.name:PTFeedback')
             }
         }
         stage('byebye') {

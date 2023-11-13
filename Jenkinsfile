@@ -30,7 +30,7 @@ pipeline {
         }
         stage('deleteDbMigratorDir') {
             steps {
-                bat('if exist "C:\\Bin\\FeedbackDdbMigration" RMDIR /Q/S "C:\\Bin\\FeedbackDdbMigration"')
+                bat('if exist "C:\\Bin\\DbMigration\\FeedbackDdbMigration" RMDIR /Q/S "C:\\Bin\\DbMigration\\FeedbackDdbMigration"')
             }
         }
         stage('copyDbMigratorFiles') {

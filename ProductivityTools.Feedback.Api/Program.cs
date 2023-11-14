@@ -51,7 +51,7 @@ builder.Services.AddControllers().AddApplicationPart(typeof(EchoController).Asse
 //    {
 //        builder.WithOrigins("http://localhost:3000", "https://localhost:3000", "https://transfersweb.z16.web.core.windows.net").AllowAnyMethod().AllowAnyHeader();
 //    });
-//});
+//}); validate jenksinfile
 
 
 

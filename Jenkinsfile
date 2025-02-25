@@ -46,7 +46,7 @@ pipeline {
         }
 
         stage('createIISPowershell'){
-            steps{
+            steps {
                 powershell '''
                 $exists = (&$appcmd list apppool /name:'PTFeedback') -ne $null
                 if ($exists -eq $false)
@@ -56,11 +56,11 @@ pipeline {
                 '''
             }
         }
-        stage('createIIS') {
-            steps {
+        //stage('createIIS') {
+          //  steps {
                 //bat('%windir%\\system32\\inetsrv\\appcmd add site /name:PTFeedback /bindings:http://*:8001 /physicalpath:"C:\\Bin\\IIS\\PTFeedback"')
-            }
-        }
+            //}
+        //}
 
         stage('stopSiteOnIis') {
             steps {

@@ -45,6 +45,12 @@ pipeline {
             }
         }
 
+        stage('createIIS') {
+            steps {
+                bat('%windir%\\system32\\inetsrv\\ appcmd add site /name:PTFeedback /bindings:http://*:80 /physicalpath:"C:\\Bin\\IIS\\PTFeedback"')
+            }
+        }
+
         stage('stopSiteOnIis') {
             steps {
                 bat('%windir%\\system32\\inetsrv\\appcmd stop site /site.name:PTFeedback')

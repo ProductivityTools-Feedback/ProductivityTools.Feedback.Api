@@ -35,7 +35,7 @@ pipeline {
         }
         stage('copyDbMigratorFiles') {
             steps {
-                bat('xcopy "ProductivityTools.Feedback.Api.DatabaseMigrations\\bin\\Release\\net6.0\\publish\\" "C:\\Bin\\DbMigration\\Feedback.Api\\" /O /X /E /H /K')
+                bat('xcopy "ProductivityTools.Feedback.Api.DatabaseMigrations\\bin\\Release\\net9.0\\publish\\" "C:\\Bin\\DbMigration\\Feedback.Api\\" /O /X /E /H /K')
             }
         }
 
@@ -67,7 +67,7 @@ pipeline {
         }
         stage('copyIisFiles') {
             steps {
-                bat('xcopy "ProductivityTools.Feedback.Api\\bin\\Release\\net6.0\\publish\\" "C:\\Bin\\IIS\\PTFeedback\\" /O /X /E /H /K')
+                bat('xcopy "ProductivityTools.Feedback.Api\\bin\\Release\\net9.0\\publish\\" "C:\\Bin\\IIS\\PTFeedback\\" /O /X /E /H /K')
 				                      
             }
         }

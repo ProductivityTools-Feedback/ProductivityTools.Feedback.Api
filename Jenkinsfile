@@ -47,7 +47,7 @@ pipeline {
 
         stage('createIIS') {
             steps {
-                bat('%windir%\\system32\\inetsrv\\ appcmd add site /name:PTFeedback /bindings:http://*:80 /physicalpath:"C:\\Bin\\IIS\\PTFeedback"')
+                bat('%windir%\\system32\\inetsrv\\appcmd add site /name:PTFeedback /bindings:http://*:80 /physicalpath:"C:\\Bin\\IIS\\PTFeedback"')
             }
         }
 

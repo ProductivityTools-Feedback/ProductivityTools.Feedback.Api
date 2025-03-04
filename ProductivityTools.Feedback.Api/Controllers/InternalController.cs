@@ -38,7 +38,7 @@ namespace ProductivityTools.Feedback.WebApi.Controllers
             {
                 var internalInformation = (from f in DbContext.Internal
                                            where f.Person.Initials == person.Initials
-                                           select new Internal() { Date = f.CreatedDate, Value = f.Value }).ToList();
+                                           select new ProductivityTools.Feedback.Contract.Internal.Internal() { Date = f.CreatedDate, Value = f.Value }).ToList();
                 personInternalInformation.Add(new PersonInternalInformation { FirstName = person.FirstName, LastName = person.LastName, InternalInformation = internalInformation });
 
             }

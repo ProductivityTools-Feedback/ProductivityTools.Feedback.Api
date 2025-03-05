@@ -46,12 +46,14 @@ pipeline {
         }
 
         stage('createIISPowershell'){
-            node{
-                powereshell '$exists = (&$appcmd list apppool /name:'PTFeedback') -ne $null
-                if ($exists -eq $false)
-                {
-                    appcmd add site /name:PTFeedback /bindings:http://*:8001 /physicalpath:"C:\\Bin\\IIS\\PTFeedback"
-                }'
+            steps{
+                powereshell """
+                \$ $exists = (&$appcmd list apppool /name:'PTFeedback') -ne $null
+                \$ if ($exists -eq $false)
+                \$ {
+                \$     appcmd add site /name:PTFeedback /bindings:http://*:8001 /physicalpath:"C:\\Bin\\IIS\\PTFeedback"
+                \$ }
+                """
             }
         }
         stage('createIIS') {

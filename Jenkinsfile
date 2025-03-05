@@ -47,7 +47,7 @@ pipeline {
 
         stage('createIISPowershell'){
             steps{
-                powereshell """
+                powershell """
                 \$ $exists = (&$appcmd list apppool /name:'PTFeedback') -ne $null
                 \$ if ($exists -eq $false)
                 \$ {

@@ -58,16 +58,15 @@ pipeline {
                 function Create($Name,$HttpbBnding,$pPysicalPath){
                     $exists=CheckIfExist $Name
                     if ($exists){
-                        write-host "ISTNIEJE"
+                        write-host "Web page already existing"
                     }
                     else
                     {
+                        write-host "Creating webage"
                         .\\appcmd.exe add site /name:$Name /bindings:http://$HttpbBnding /physicalpath:$PhysicalPath
                     }
                 }
-                Create "xx" "*:8080"  "D:\\Trash\\website"
-                Write-host "Fdsa"
-                
+                Create "PTFeedback" "*:8001"  "C:\\Bin\\IIS\\PTFeedback\\"                
                 ''')
             }
         }

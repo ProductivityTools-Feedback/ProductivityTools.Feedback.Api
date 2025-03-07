@@ -45,17 +45,19 @@ pipeline {
             }
         }
 
-        stage('createIISPowershell'){
+        stage('runDbMigratorFiles') {
             steps {
-                powershell '''
-                $exists = (&$appcmd list apppool /name:'PTFeedback') -ne $null
-                if ($exists -eq $false)
-                {
-                    appcmd add site /name:PTFeedback /bindings:http://*:8001 /physicalpath:"C:\\Bin\\IIS\\PTFeedback"
-                }
-                '''
+                powershell('Install-Module ProductivityTools.IIS -y')
             }
         }
+
+           stage('runDbMigratorFiles') {
+            steps {
+                powershell('New-IISSiteIfDoesNotExist -Name "xx" -BindingInformation "*:8080" -PhysicalPath "D:\\Trash\\website" -Verbose')
+            }
+        }
+
+       
         //stage('createIIS') {
           //  steps {
                 //bat('%windir%\\system32\\inetsrv\\appcmd add site /name:PTFeedback /bindings:http://*:8001 /physicalpath:"C:\\Bin\\IIS\\PTFeedback"')

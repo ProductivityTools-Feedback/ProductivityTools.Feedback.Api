@@ -50,7 +50,7 @@ pipeline {
                 powershell('''
                 function CheckIfExist($Name){
                     cd $env:SystemRoot\\system32\\inetsrv
-                    $exists = (.\appcmd.exe list sites /name:$Name) -ne $null
+                    $exists = (.\\appcmd.exe list sites /name:$Name) -ne $null
                     Write-Host $exists
                     return $true
                 }

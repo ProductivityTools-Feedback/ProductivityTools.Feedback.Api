@@ -50,7 +50,7 @@ pipeline {
                 powershell('''
                 Install-Module ProductivityTools.IIS -Force -AllowClobber -Verbose
                 Get-Module -ListAvailable
-                New-IISSiteIfDoesNotExist -Name "xx" -BindingInformation "*:8080" -PhysicalPath "D:\\Trash\\website" -Verbose
+                New-IISSiteIfDoesNotExist -Name "xx" -BindingInformation "*:8080" -PhysicalPath c:\\fdsa -Verbose
                 ''')
             }
         }

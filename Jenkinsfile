@@ -48,14 +48,22 @@ pipeline {
         stage('install module') {
             steps {
                 powershell('''
-                function CheckIfExist(){
-                    write-host "XXXX"
+                function CheckIfExist($Name){
+                    cd $env:SystemRoot\\system32\\inetsrv
+                    $exists = (.\appcmd.exe list sites /name:$Name) -ne $null
+                    Write-Host $exists
+                    return $true
                 }
-                CheckIfExist
-                Install-Module ProductivityTools.IIS -Force -AllowClobber -Verbose
-                Get-Module -ListAvailable
+                
+                function Create(){
+                    $exists=CheckIfExist "pawel"
+                    if ($exists){
+                        write-host "ISTNIEJE"
+                    }
+                }
+                Create 
                 Write-host "Fdsa"
-                New-IISSiteIfDoesNotExist -Name "xx" -BindingInformation "*:8080" -PhysicalPath c:\\fdsa -Verbose
+                
                 ''')
             }
         }

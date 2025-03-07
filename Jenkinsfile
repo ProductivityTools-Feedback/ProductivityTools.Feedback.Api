@@ -48,7 +48,7 @@ pipeline {
         stage('install module') {
             steps {
                 powershell('''
-                Install-Module ProductivityTools.IIS -Force -AllowClobber -Scope CurrentUser
+                Install-Module ProductivityTools.IIS -Force -AllowClobber -Verbose
                 New-IISSiteIfDoesNotExist -Name "xx" -BindingInformation "*:8080" -PhysicalPath "D:\\Trash\\website" -Verbose
                 ''')
             }

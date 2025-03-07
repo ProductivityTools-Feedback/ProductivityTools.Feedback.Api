@@ -47,7 +47,7 @@ pipeline {
 
         stage('install module') {
             steps {
-                powershell('Install-Module ProductivityTools.IIS -y')
+                powershell('Install-Module ProductivityTools.IIS -Force')
             }
         }
 

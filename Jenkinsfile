@@ -55,13 +55,17 @@ pipeline {
                     return $true
                 }
                 
-                function Create(){
-                    $exists=CheckIfExist "pawel"
+                function Create($Name,$HttpbBnding,$pPysicalPath){
+                    $exists=CheckIfExist $nNme
                     if ($exists){
                         write-host "ISTNIEJE"
                     }
+                    else
+                    {
+                        .\\appcmd.exe add site /name:$Name /bindings:$HttpbBnding /physicalpath:$PhysicalPath
+                    }
                 }
-                Create 
+                Create "xx" "*:8080"  "D:\\Trash\\website"
                 Write-host "Fdsa"
                 
                 ''')

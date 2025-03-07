@@ -47,13 +47,14 @@ pipeline {
 
         stage('install module') {
             steps {
-                powershell('Install-Module ProductivityTools.IIS -Force -AllowClobber -Scope CurrentUser')
+                powershell('Install-Module ProductivityTools.IIS -Force -AllowClobber -Scope CurrentUser
+                New-IISSiteIfDoesNotExist -Name "xx" -BindingInformation "*:8080" -PhysicalPath "D:\\Trash\\website" -Verbose')
             }
         }
 
         stage('create iis') {
             steps {
-                powershell('New-IISSiteIfDoesNotExist -Name "xx" -BindingInformation "*:8080" -PhysicalPath "D:\\Trash\\website" -Verbose')
+                powershell('write-host "aweol"')
             }
         }
 

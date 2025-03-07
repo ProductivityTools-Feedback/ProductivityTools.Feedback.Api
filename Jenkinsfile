@@ -56,7 +56,7 @@ pipeline {
                 }
                 
                 function Create($Name,$HttpbBnding,$pPysicalPath){
-                    $exists=CheckIfExist $nNme
+                    $exists=CheckIfExist $Name
                     if ($exists){
                         write-host "ISTNIEJE"
                     }

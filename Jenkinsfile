@@ -48,8 +48,13 @@ pipeline {
         stage('install module') {
             steps {
                 powershell('''
+                function CheckIfExist(){
+                    write-host "XXXX"
+                }
+                CheckIfExist
                 Install-Module ProductivityTools.IIS -Force -AllowClobber -Verbose
                 Get-Module -ListAvailable
+                Write-host "Fdsa"
                 New-IISSiteIfDoesNotExist -Name "xx" -BindingInformation "*:8080" -PhysicalPath c:\\fdsa -Verbose
                 ''')
             }

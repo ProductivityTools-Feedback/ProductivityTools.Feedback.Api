@@ -62,7 +62,7 @@ pipeline {
                     }
                     else
                     {
-                        .\\appcmd.exe add site /name:$Name /bindings:$HttpbBnding /physicalpath:$PhysicalPath
+                        .\\appcmd.exe add site /name:$Name /bindings:http://$HttpbBnding /physicalpath:$PhysicalPath
                     }
                 }
                 Create "xx" "*:8080"  "D:\\Trash\\website"

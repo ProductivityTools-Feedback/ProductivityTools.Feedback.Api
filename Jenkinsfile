@@ -45,6 +45,12 @@ pipeline {
             }
         }
 
+         stage('execution policy') {
+            steps {
+                powershell('Set-ExecutionPolicy RemoteSigned')
+            }
+        }
+
         stage('install module') {
             steps {
                 powershell('Install-Module ProductivityTools.IIS -Force -AllowClobber -Scope CurrentUser')

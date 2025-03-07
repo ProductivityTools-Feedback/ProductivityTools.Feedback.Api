@@ -45,13 +45,13 @@ pipeline {
             }
         }
 
-        stage('runDbMigratorFiles') {
+        stage('install module') {
             steps {
                 powershell('Install-Module ProductivityTools.IIS -y')
             }
         }
 
-           stage('runDbMigratorFiles') {
+        stage('create iis') {
             steps {
                 powershell('New-IISSiteIfDoesNotExist -Name "xx" -BindingInformation "*:8080" -PhysicalPath "D:\\Trash\\website" -Verbose')
             }

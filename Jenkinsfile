@@ -52,7 +52,7 @@ pipeline {
                     cd $env:SystemRoot\\system32\\inetsrv
                     $exists = (.\\appcmd.exe list sites /name:$Name) -ne $null
                     Write-Host $exists
-                    return $true
+                    return  $exists
                 }
                 
                 function Create($Name,$HttpbBnding,$pPysicalPath){

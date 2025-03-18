@@ -55,7 +55,7 @@ pipeline {
                     return  $exists
                 }
                 
-                function Create($Name,$HttpbBnding,$pPysicalPath){
+                function Create($Name,$HttpbBnding,$PysicalPath){
                     $exists=CheckIfExist $Name
                     if ($exists){
                         write-host "Web page already existing"

@@ -113,7 +113,7 @@ pipeline {
         stage('byebye') {
             steps {
                 // Get some code from a GitHub repository
-                echo 'bye'
+                echo 'bye bye'
             }
         }
     }

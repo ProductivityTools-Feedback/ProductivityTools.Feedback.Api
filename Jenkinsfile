@@ -83,6 +83,15 @@ pipeline {
             }
         }
 
+        stage('listSite') {
+            steps {
+                  echo 'listing sites so remvoe will succeed'
+            }
+            steps {
+                bat('%windir%\\system32\\inetsrv\\appcmd list sites')
+            }
+        }
+
         stage('deleteIisDir') {
             steps {
                 retry(5) {

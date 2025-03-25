@@ -90,31 +90,31 @@ pipeline {
             }
         }
 
-        stage('deleteIisDir') {
-            steps {
-                retry(5) {
-                    bat('if exist "C:\\Bin\\IIS\\PTFeedback" RMDIR /Q/S "C:\\Bin\\IIS\\PTFeedback"')
-                }
+        // stage('deleteIisDir') {
+        //     steps {
+        //         retry(5) {
+        //             bat('if exist "C:\\Bin\\IIS\\PTFeedback" RMDIR /Q/S "C:\\Bin\\IIS\\PTFeedback"')
+        //         }
 
-            }
-        }
-        stage('copyIisFiles') {
-            steps {
-                bat('xcopy "ProductivityTools.Feedback.Api\\bin\\Release\\net9.0\\publish\\" "C:\\Bin\\IIS\\PTFeedback\\" /O /X /E /H /K')
+        //     }
+        // }
+        // stage('copyIisFiles') {
+        //     steps {
+        //         bat('xcopy "ProductivityTools.Feedback.Api\\bin\\Release\\net9.0\\publish\\" "C:\\Bin\\IIS\\PTFeedback\\" /O /X /E /H /K')
 				                      
-            }
-        }
+        //     }
+        // }
 
-        stage('startSiteOnIis') {
-            steps {
-                bat('%windir%\\system32\\inetsrv\\appcmd start site /site.name:PTFeedback')
-            }
-        }
-        stage('byebye') {
-            steps {
-                // Get some code from a GitHub repository
-                echo 'bye bye bye'
-            }
-        }
+        // stage('startSiteOnIis') {
+        //     steps {
+        //         bat('%windir%\\system32\\inetsrv\\appcmd start site /site.name:PTFeedback')
+        //     }
+        // }
+        // stage('byebye') {
+        //     steps {
+        //         // Get some code from a GitHub repository
+        //         echo 'bye bye bye'
+        //     }
+        // }
     }
 }

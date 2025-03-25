@@ -85,9 +85,7 @@ pipeline {
 
         stage('listSite') {
             steps {
-                  echo 'listing sites so remvoe will succeed'
-            }
-            steps {
+                echo 'listing sites so remvoe will succeed'
                 bat('%windir%\\system32\\inetsrv\\appcmd list sites')
             }
         }

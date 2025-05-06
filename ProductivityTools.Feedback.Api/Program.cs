@@ -47,7 +47,7 @@ builder.Services.AddCors(options =>
     options.AddPolicy(MyAllowSpecificOrigins,
     builder =>
     {
-        builder.WithOrigins("https://ptservicestatus-309299231472.us-central1.run.app/").AllowAnyMethod().AllowAnyHeader();
+        builder.WithOrigins("https://ptservicestatus-309299231472.us-central1.run.app").AllowAnyMethod().AllowAnyHeader();
     });
 }); //validate jenksinfile
 

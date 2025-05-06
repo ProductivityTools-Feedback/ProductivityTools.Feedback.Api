@@ -42,20 +42,20 @@ builder.Services
 builder.Services.AddScoped<TeamManagmentContext>();
 builder.Services.AddControllers().AddApplicationPart(typeof(EchoController).Assembly);
 
-//builder.Services.AddCors(options =>
-//{
-//    options.AddPolicy(MyAllowSpecificOrigins,
-//    builder =>
-//    {
-//        builder.WithOrigins("http://localhost:3000", "https://localhost:3000", "https://transfersweb.z16.web.core.windows.net").AllowAnyMethod().AllowAnyHeader();
-//    });
-//}); validate jenksinfile
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(MyAllowSpecificOrigins,
+    builder =>
+    {
+        builder.WithOrigins("https://ptservicestatus-309299231472.us-central1.run.app/").AllowAnyMethod().AllowAnyHeader();
+    });
+}); //validate jenksinfile
 
 
 
 var app = builder.Build();
 app.UseRouting();//not sure if required
-//app.UseCors(MyAllowSpecificOrigins);
+app.UseCors(MyAllowSpecificOrigins);
 app.UseAuthentication();
 app.UseAuthorization();
 

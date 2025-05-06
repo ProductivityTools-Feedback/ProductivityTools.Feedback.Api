@@ -55,15 +55,21 @@ pipeline {
                     return  $exists
                 }
                 
-                function Create($Name,$HttpbBnding,$PhysicalPath){
+                 function Create($Name,$HttpbBnding,$PhysicalPath){
                     $exists=CheckIfExist $Name
                     if ($exists){
                         write-host "Web page already existing"
                     }
                     else
                     {
+                        write-host "Creating app pool"
+                        .\\appcmd.exe add apppool /name:$Name /managedRuntimeVersion:"v4.0" /managedPipelineMode:"Integrated"
                         write-host "Creating webage"
                         .\\appcmd.exe add site /name:$Name /bindings:http://$HttpbBnding /physicalpath:$PhysicalPath
+                        write-host "assign app pool to the website"
+                        .\\appcmd.exe set app "$Name/" /applicationPool:"$Name"
+
+
                     }
                 }
                 Create "PTFeedback" "*:8001"  "C:\\Bin\\IIS\\PTFeedback\\"                

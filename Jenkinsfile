@@ -121,9 +121,9 @@ pipeline {
                 bat('%windir%\\system32\\inetsrv\\appcmd start site /site.name:PTFeedback')
             }
         }
-        stage('Create Login PTTrips on SQL2022') {
+        stage('Create Login PTFeedback on SQL2022') {
              steps {
-                 bat('sqlcmd -S ".\\SQL2022" -q "CREATE LOGIN [IIS APPPOOL\\PTTrips] FROM WINDOWS;"')
+                 bat('sqlcmd -S ".\\SQL2022" -q "CREATE LOGIN [IIS APPPOOL\\PTFeedback] FROM WINDOWS;"')
              }
         }
 		

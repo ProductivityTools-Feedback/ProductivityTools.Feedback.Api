@@ -83,18 +83,23 @@ pipeline {
             }
         }
 
-        stage('listSite') {
+		stage('Delete PTFeedback IIS directory') {
             steps {
-                echo 'listing sites so remvoe will succeed'
-                bat('%windir%\\system32\\inetsrv\\appcmd list sites')
-            }
-        }
-
-        stage('deleteIisDir') {
-            steps {
-                retry(5) {
-                    bat('if exist "C:\\Bin\\IIS\\PTFeedback" RMDIR /Q/S "C:\\Bin\\IIS\\PTFeedback"')
-                }
+              powershell('''
+                if ( Test-Path "C:\\Bin\\IIS\\PTFeedback")
+                {
+                    while($true) {
+                        if ( (Remove-Item "C:\\Bin\\IIS\\PTFeedback" -Recurse *>&1) -ne $null)
+                        {  
+                            write-output "removing failed we should wait"
+                        }
+                        else 
+                        {
+                            break 
+                        } 
+                    }
+                  }
+              ''')
 
             }
         }

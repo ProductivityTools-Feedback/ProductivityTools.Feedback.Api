@@ -10,42 +10,49 @@ pipeline {
                 echo 'hello'
             }
         }
+        
+        stage('just hello') {
+            steps {
+                powershell('write-host "aweol"')
+            }
+        }
+
         stage('deleteWorkspace') {
             steps {
                 deleteDir()
             }
         }
 
-        stage('clone') {
+        stage('Git clone') {
             steps {
                 // Get some code from a GitHub repository
                 git branch: 'main',
                 url: 'https://github.com/ProductivityTools-Feedback/ProductivityTools.Feedback.Api.git'
             }
         }
-        stage('build') {
+        stage('Build solution') {
             steps {
                 bat(script: "dotnet publish ProductivityTools.Feedback.Api.sln -c Release ", returnStdout: true)
             }
         }
-        stage('deleteDbMigratorDir') {
+        stage('Delete databse migration directory') {
             steps {
                 bat('if exist "C:\\Bin\\DbMigration\\Feedback.Api" RMDIR /Q/S "C:\\Bin\\DbMigration\\Feedback.Api"')
             }
         }
-        stage('copyDbMigratorFiles') {
+        stage('Copy database migration files') {
             steps {
                 bat('xcopy "ProductivityTools.Feedback.Api.DatabaseMigrations\\bin\\Release\\net9.0\\publish\\" "C:\\Bin\\DbMigration\\Feedback.Api\\" /O /X /E /H /K')
             }
         }
 
-        stage('runDbMigratorFiles') {
+        stage('Run databse migration files') {
             steps {
                 bat('C:\\Bin\\DbMigration\\Feedback.Api\\ProductivityTools.Feedback.Api.DatabaseMigrations.exe')
             }
         }
 
-        stage('create iis page') {
+        stage('Create page on the IIS') {
             steps {
                 powershell('''
                 function CheckIfExist($Name){
@@ -77,13 +84,9 @@ pipeline {
             }
         }
 
-        stage('just hello') {
-            steps {
-                powershell('write-host "aweol"')
-            }
-        }
 
-        stage('stopSiteOnIis') {
+
+        stage('Stop page on the IIS') {
             steps {
                 bat('%windir%\\system32\\inetsrv\\appcmd stop site /site.name:PTFeedback')
             }
@@ -109,7 +112,7 @@ pipeline {
 
             }
         }
-        stage('copyIisFiles') {
+        stage('Copy web page to the IIS Bin directory') {
             steps {
                 bat('xcopy "ProductivityTools.Feedback.Api\\bin\\Release\\net9.0\\publish\\" "C:\\Bin\\IIS\\PTFeedback\\" /O /X /E /H /K')
 				                      

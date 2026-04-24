@@ -1,0 +1,94 @@
+name: .NET CI/CD
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build-and-deploy:
+    runs-on: self-hosted # Changed from windows-latest to self-hosted as it targets local C:\ paths and local IIS/SQL
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: '9.0.x'
+
+    - name: Build and Publish solution
+      run: dotnet publish ProductivityTools.Feedback.Api.sln -c Release
+
+    - name: Clean Database Migration Directory
+      shell: cmd
+      run: if exist "C:\Bin\DbMigration\Feedback.Api" RMDIR /Q/S "C:\Bin\DbMigration\Feedback.Api"
+
+    - name: Copy Database Migration Files
+      shell: cmd
+      run: xcopy "ProductivityTools.Feedback.Api.DatabaseMigrations\bin\Release\net9.0\publish\*" "C:\Bin\DbMigration\Feedback.Api\" /O /X /E /H /K /I
+
+    - name: Run Database Migrations
+      shell: cmd
+      run: C:\Bin\DbMigration\Feedback.Api\ProductivityTools.Feedback.Api.DatabaseMigrations.exe
+
+    - name: Create or Update IIS Site
+      shell: pwsh
+      run: |
+        function CheckIfExist($Name){
+            cd $env:SystemRoot\system32\inetsrv
+            $exists = (.\appcmd.exe list sites /name:$Name) -ne $null
+            return $exists
+        }
+        
+        function Create($Name, $HttpBinding, $PhysicalPath){
+            $exists = CheckIfExist $Name
+            if ($exists){
+                Write-Host "Web page already existing"
+            }
+            else {
+                Write-Host "Creating app pool"
+                .\appcmd.exe add apppool /name:$Name /managedRuntimeVersion:"v4.0" /managedPipelineMode:"Integrated"
+                Write-Host "Creating webpage"
+                .\appcmd.exe add site /name:$Name /bindings:http://$HttpBinding /physicalpath:$PhysicalPath
+                Write-Host "assign app pool to the website"
+                .\appcmd.exe set app "$Name/" /applicationPool:"$Name"
+            }
+        }
+        Create "PTFeedback" "*:8001" "C:\Bin\IIS\PTFeedback\"
+
+    - name: Stop IIS Site
+      shell: cmd
+      run: "%windir%\\system32\\inetsrv\\appcmd stop site /site.name:PTFeedback"
+      continue-on-error: true # Might fail if site is already stopped or doesn't exist yet
+
+    - name: Delete PTFeedback IIS directory
+      shell: pwsh
+      run: |
+        if (Test-Path "C:\Bin\IIS\PTFeedback") {
+            while($true) {
+                try {
+                    Remove-Item "C:\Bin\IIS\PTFeedback" -Recurse -Force -ErrorAction Stop
+                    break
+                }
+                catch {
+                    Write-Output "Removing failed, waiting 1 second..."
+                    Start-Sleep -Seconds 1
+                }
+            }
+        }
+
+    - name: Copy Web Page to IIS directory
+      shell: cmd
+      run: xcopy "ProductivityTools.Feedback.Api\bin\Release\net9.0\publish\*" "C:\Bin\IIS\PTFeedback\" /O /X /E /H /K /I
+
+    - name: Start IIS Site
+      shell: cmd
+      run: "%windir%\\system32\\inetsrv\\appcmd start site /site.name:PTFeedback"
+
+    - name: Create SQL Login
+      shell: cmd
+      run: sqlcmd -S ".\SQL2022" -q "IF NOT EXISTS (SELECT name FROM sys.server_principals WHERE name = 'IIS APPPOOL\PTFeedback') CREATE LOGIN [IIS APPPOOL\PTFeedback] FROM WINDOWS;"
+      continue-on-error: true

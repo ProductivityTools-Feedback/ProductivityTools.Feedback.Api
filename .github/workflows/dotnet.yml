@@ -31,7 +31,10 @@ jobs:
 
     - name: Copy Database Migration Files
       shell: cmd
-      run: xcopy "ProductivityTools.Feedback.Api.DatabaseMigrations\bin\Release\net9.0\publish\*" "C:\Bin\DbMigration\Feedback.Api\" /O /X /E /H /K /I
+      # Added robocopy to bypass Windows 260 character path limit
+      run: |
+        robocopy "ProductivityTools.Feedback.Api.DatabaseMigrations\bin\Release\net9.0\publish" "C:\Bin\DbMigration\Feedback.Api" /E /IS /IT
+        if %ERRORLEVEL% LEQ 7 exit /b 0
 
     - name: Run Database Migrations
       shell: cmd
@@ -85,7 +88,10 @@ jobs:
 
     - name: Copy Web Page to IIS directory
       shell: cmd
-      run: xcopy "ProductivityTools.Feedback.Api\bin\Release\net9.0\publish\*" "C:\Bin\IIS\PTFeedback\" /O /X /E /H /K /I
+      # Added robocopy to bypass Windows 260 character path limit
+      run: |
+        robocopy "ProductivityTools.Feedback.Api\bin\Release\net9.0\publish" "C:\Bin\IIS\PTFeedback" /E /IS /IT
+        if %ERRORLEVEL% LEQ 7 exit /b 0
 
     - name: Start IIS Site
       shell: cmd

@@ -71,7 +71,7 @@ jobs:
       continue-on-error: true # Might fail if site is already stopped or doesn't exist yet
 
     - name: Delete PTFeedback IIS directory
-      shell: pwsh
+      shell: powershell
       run: |
         if (Test-Path "C:\Bin\IIS\PTFeedback") {
             while($true) {

@@ -41,7 +41,7 @@ jobs:
       run: C:\Bin\DbMigration\Feedback.Api\ProductivityTools.Feedback.Api.DatabaseMigrations.exe
 
     - name: Create or Update IIS Site
-      shell: pwsh
+      shell: powershell
       run: |
         function CheckIfExist($Name){
             cd $env:SystemRoot\system32\inetsrv

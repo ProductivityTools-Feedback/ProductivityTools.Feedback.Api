@@ -65,6 +65,13 @@ jobs:
         }
         Create "PTFeedback" "*:8001" "C:\Bin\IIS\PTFeedback\"
 
+    - name: Open Firewall Port 8001
+      shell: powershell
+      run: |
+        if (!(Get-NetFirewallRule -DisplayName "PTFeedback 8001" -ErrorAction SilentlyContinue)) {
+            New-NetFirewallRule -DisplayName "PTFeedback 8001" -Direction Inbound -LocalPort 8001 -Protocol TCP -Action Allow
+        }
+
     - name: Stop IIS Site
       shell: cmd
       run: "%windir%\\system32\\inetsrv\\appcmd stop site /site.name:PTFeedback"
